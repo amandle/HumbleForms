@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
@@ -478,7 +477,7 @@ a.account-link-link {
 /*This is where I start customizing things*/
 
   ul.productlist li{
-  	list-style-type: none;
+    list-style-type: none;
   }
 
 body {
@@ -1036,6 +1035,48 @@ label.directions{
   font-weight: 800;
 }
 
+  #help-button {
+/*  padding: 10px 10px 5px 10px;*/
+  padding: 0 5px 0 5px;
+  /*height: 45px;*/
+  /*background:#222;*/
+  /*margin-bottom:30px;*/
+  color:#eee;
+  /*box-shadow: 0 0 5px #000;*/
+  display:inline;
+  vertical-align:text-bottom;
+}
+  
+  #help-button .beta {
+  /*left:10px;*/
+  top:-4px;
+  padding: 4px 6px 4px 7px;
+  position: relative;
+  opacity:.7;
+  border-radius:4px;
+  font-size:14px;
+  background: #eee;
+  color: #000;
+  font-weight:normal;
+}
+
+.help-buttonLogo {
+  font:normal 14px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight:300;
+  letter-spacing:2px;
+  color:#ccc;
+  font-size:30px;
+  margin: 0px 0px 0 0;
+  /*float:left;*/
+  text-decoration:none;
+}
+
+div.input-field{
+  margin-bottom: 15px;
+  margin-top: 15px;
+  text-align:right;
+}
+
   }
 
 
@@ -1167,6 +1208,34 @@ return;
 document.getElementById(ID2).style.display = 'none';
 document.getElementById(ID1).checked = false;
 }
+}
+
+function addDevice(){
+//Checking if select field is enabled
+
+  document.getElementById('device2').style.display = 'block';
+  document.getElementById('deviceButton').style.display = 'none';
+
+  return;
+/*
+if (document.getElementById('device2').style.display = 'none')
+{
+//Changing the select field state to disabled and changing the value of button to enable
+//console.log("Show" + " , ID1: '" + ID1 + "' , ID2: '" + ID2 + "'");
+document.getElementById('device2').style.display = 'block';
+console.log("SOMETHING");
+ return;
+} 
+
+else if (document.getElementById('device3').style.display = 'none')
+{
+//Changing the select field state to disabled and changing the value of button to enable
+console.log("SOMETHING ELSE");
+document.getElementById('device3').style.display = 'block';
+} 
+*/
+
+
 
 }
 </script>
@@ -1177,17 +1246,17 @@ document.getElementById(ID1).checked = false;
   <div id='topbar'>
     <div class='constrain-width'>
       <div class='topBarLeft'>
-        <a href='./' class='topBarLogo'>humble bundle store agreement<span class='beta'>beta</span></a>
+        <a class='topBarLogo'>humble bundle nda<span class='beta'>beta</span></a>
       </div>
     </div>
   </div>
 
 
-<meta itemprop="name" content="Humble Bundle Store BETA Agreement">
-<meta itemprop="description" content="Humble Store Contract Form for Game Developers">
-<meta itemprop="thumbnailUrl" content="https://docs.google.com/spreadsheet/formthumb?formkey=dHFOUDhfR3ZRREZkd2gtczZIRWF2cHc6MA">
+<meta itemprop="name" content="Humble Bundle NDA">
+<meta itemprop="description" content="Humble Bundle NDA">
+<meta itemprop="thumbnailUrl" content="https://docs.google.com/spreadsheet/formthumb?formkey=dHFVVGJmTm10TlFPcjJfa2Z0azE2NXc6MA">
 
-<meta itemprop="embedUrl" content="https://docs.google.com/spreadsheet/embeddedform?formkey=dHFOUDhfR3ZRREZkd2gtczZIRWF2cHc6MA">
+<meta itemprop="embedUrl" content="https://docs.google.com/spreadsheet/embeddedform?formkey=dHFVVGJmTm10TlFPcjJfa2Z0azE2NXc6MA">
 <meta itemprop="faviconUrl" content="//ssl.gstatic.com/docs/spreadsheets/forms/favicon_jfk.png">
 
 <div class='clearfix'></div>
@@ -1212,364 +1281,65 @@ document.getElementById(ID1).checked = false;
     display:none;
   }
 </style>
-<div id='flash'></div>
+<!--
+			<div align="center">
+				<img src="http://dl.dropbox.com/u/70615435/Humble_NDA/Screen%20Shot%202012-06-28%20at%2010.19.45%20AM.png" alt="Step 1" height="388px" width="232px" style="display:inline; margin:10px"/>
+				<img src="http://dl.dropbox.com/u/70615435/Humble_NDA/Screen%20Shot%202012-06-28%20at%2010.19.33%20AM.png" alt="Step 2" height="388px" width="232px" style="display:inline; margin:10px"/>
+				<img src="http://dl.dropbox.com/u/70615435/Humble_NDA/Screen%20Shot%202012-06-28%20at%2010.19.14%20AM.png" alt="Step 3" height="388px" width="232px" style="display:inline; margin:10px"/>
+			</div>
+			<div align="center" style="display:inline; width:232px">
+				<div id="deviceButton" style="display:inline">
+			      <div id='help-button' style="padding-bottom:10px;">
+			       	<a class='help-buttonLogo'><span class='beta'>Menu</span></a>
+			      </div>
+			    </div>
+			    <p style="display:line"> and find </p>
+				<div id="deviceButton" style="display:line">
+			      <div id='help-button' style="padding-bottom:10px;">
+			        <a class='help-buttonLogo'><span class='beta'>Setting</span></a>
+			      </div>
+			    </div>
+			</div>
+			<div align="center" style="display:inline">
+				<p class="width" align="center">Find "About Phone"</p>
+			</div>
+			<div align="center" style="display:inline">
+				<p class="width" align="center">"Model Number"</p>
+		        <p class="width" align="center"> "Firmware" (or "Android") Version</p>
+		        <p class="width" align="center"> "ROM" Version</p>
+			</div>
+		    <p>If you are running a custom ROM (CyanogenMod, etc.) please fill in the "Other" section with the name of the ROM and the version of Android. Games known to work on stock versions of Android sometimes fail unexpectedly on custom ROMs.</p>
+    	
+-->
 
-      
-<h1>Store Information</h1>
-
-<div class="ss-form">
-  <script type="text/javascript">var submitted=false;</script>
-    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted)
-            {window.location='./thank-you.html';}"></iframe>
-      <form action="https://docs.google.com/a/humblebundle.com/spreadsheet/formResponse?formkey=dDRROGxlbnVQeGkxSlFRa1hPTDUyYUE6MA&amp;theme=0AX42CRMsmRFbUy1kN2NjY2Y0Mi1iYWFmLTQxMWMtYjM0NC04NmZmYTIwZDRkMGQ&amp;ifq" method="post" target="hidden_iframe" onsubmit="submitted=true;" id="commentForm"> 
-        <h2>Create your Humble Store Profile</h2>
-        <ul class='productlist'>
-        <div class="errorbox-good">
-          <div class="ss-item ss-item-required ss-text">
-            <div class="ss-form-entry">
-              <label class="ss-q-title" for="entry_7">Name</label>
-              <input type="text" name="entry.7.single" value="First Last" class="default-value required" id="entry_7" minlength="2">
-            </div>
-          </div>
-        </div>
-
-        <br> 
-        <div class="errorbox-good">
-          <div class="ss-item ss-item-required ss-text">
-            <div class="ss-form-entry">
-              <label class="ss-q-title" for="entry_15">Email</label>
-              <input type="text" name="entry.15.single" value="name@company.com" class="default-value required email" id="entry_15">
-            </div>
-          </div>
-        </div>
-
-        <br> 
-        <div class="errorbox-good">
-          <div class="ss-item ss-item-required ss-text">
-            <div class="ss-form-entry">
-              <label class="ss-q-title" for="entry_13">Position Held</label>
-              <input type="text" name="entry.13.single" value="CEO, Director, etc" class="default-value required" id="entry_13">
-            </div>
-          </div>
-        </div>
-
-
-        <br> 
-        <div class="errorbox-good">
-          <div class="ss-item ss-item-required ss-text">
-            <div class="ss-form-entry">
-              <label class="ss-q-title" for="entry_9">Date</label>
-              <input type="text" name="entry.9.single" value="MM/DD/YYYY" class="default-value required date" id="entry_9">
-            </div>
-          </div>
-        </div>
-
-        <br> 
-        <div class="errorbox-good">
-          <div class="ss-item ss-item-required ss-paragraph-text">
-            <div class="ss-form-entry">
-              <label class="ss-q-title" for="entry_18">Product(s) to be sold on the Humble Store</label>
-              <div>
-                <textarea name="entry.18.single" rows="8" cols="75" class="help-text required" id="entry_18">(Game, Soundtrack, Concept Art, etc.)</textarea>
-              </div>
-            </div>
-          </div>
-        </div>
-      </ul>
-
-      <h2>Build your Humble Store Widget</h2>
-
-      <ul>
-      <!--This is all Humble Store Widget DOM. I can't use an iframe since it screws up the webpage form, so I had to copy it all out and modify it here.
-          Basically, I just neutered the widget so you can't enter an e-mail address or press any of the buttons. Makes it easy to build the widget though.-->
-       <!--<form action="https://www.humblebundle.com/store/submit" target="_top" method="post" id="hs-form">-->
-       	
-        <div id="hs-widget">
-          <div id="hs-holder">
-            <div id="hs-icon" style="background-image:url(&quot;http://dl.dropbox.com/u/70841774/icon70.png&quot;);"></div>
-            <div id="hs-info">
-              <div id="hs-title">Humble Bundle - The Game!</div>
-              <div id="hs-price">$5.00</div>
-              <div id="hs-row-2">
-                <div id="hs-author">Humble Bundle Inc.</div>
-                <div id="hs-platforms">
-                  
-                    <div id='hs-soundtrack' style="display:none"></div>
-
-                    <div id="hs-windows" style="display:inline"></div>
-                  
-                    <div id="hs-mac" style="display:inline"></div>
-                  
-                    <div id="hs-linux" style="display:none"></div>
-
-                    <div id='hs-android' style="display:none"></div>
-                  
-                </div>
-              </div>
-              <div id="hs-description">The game where you get to sell your title directly from your site... and win!</div>
-            </div>
-          </div>
-          <div id="hs-options">
-            <div id="hs-email">
-              <label for="hs-emailfield" id="hs-infield" class="in-field">Enter your email address</label>
-              <input type="text" name="email" value="" id="hs-emailfield" disabled="disabled" autocomplete="off">
-            </div>
-
-            <div id="hs-gift">
-              <label>
-                <input type="checkbox" name="gift" id="hs-giftcheckbox" disabled="disabled" class="hs-checkbox">
-                <span>
-                  Purchase as gift
-                </span>
-              </label>
-            </div>
-
-          </div>
-
-          <div id="hs-caption">
-            <div id="forgotemailaddress">Did you mean <a href="#" class="suggested-email">someotherthing@<strong>longdomain.com</strong>?</a> (<a href="#">Nope</a>)</div>
-            <div id="hw-email-error">Please enter a valid email address.</div>
-            <div id="default-caption">Select one of the payment options below to complete your purchase.</div>
-          </div>
-          <div id="hs-container">
-            <div class="hs-buttonwindow">
-              <div class="hs-purchase-in-progress">
-                <div class="hs-processing-text"><img src="http://cdn.humblebundle.com/main/spinner-big.gif"> Processing...</div>
-              </div>
-              <div class="hs-orderbuttons">
-                <img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" type="image" name="paypal" value="PayPal" style="padding: 12px 7px 4px 7px;">
-                <img src="http://cdn.humblebundle.com/hib2/light/btn_l_paynow_151x43_orange_logo.png" type="image" name="amazon" value="Amazon" style="padding: 12px 7px 4px 7px;">
-                <img src="https://checkout.google.com/buttons/checkout.gif?merchant_id=204250837318315&amp;w=180&amp;h=46&amp;style=trans&amp;variant=text&amp;loc=en_US" type="image" name="google" value="Google" style="padding: 12px 7px 4px 7px;">
-                
-              </div>
-            </div>
-          </div>
-
-          <div id="hs-logo"><img src="http://cdn.humblebundle.com/store/logo.png"> <span>Humble Store</span></div>
-        </div>
-        <!--<input type="hidden" value="braid" name="product">
-
-        </form>-->
-
-        <!--This is the end of the Humble Store Widget Form-->
-      </ul>
-
-      <ul class='productlist'>
-        <div style="float:left">
-          <br> 
-          <div>
-            <div class="ss-item ss-item-required ss-text">
-              <div class="ss-form-entry">
-                <label class="ss-q-title" for="entry_26">Game Name</label>
-                <input type="text" name="entry.26.single" value="Humble Bundle - The Game!" class="default-value required" id="entry_26" onkeyup="getData('entry_26', 'hs-title')" >
-              </div>
-            </div>
-          </div>
-
-
-          <br> 
-          <div>
-            <div class="ss-item ss-item-required ss-text">
-              <div class="ss-form-entry">
-                <label class="ss-q-title" for="entry_27">Developer Name </label>
-                <input type="text" name="entry.27.single" value="Humble Bundle Inc." class="default-value required" id="entry_27" onkeyup="getData('entry_27', 'hs-author')" >
-              </div>
-            </div>
-          </div>
-
-          <br> 
-          <div>
-            <div class="ss-item ss-item-required ss-text">
-              <div class="ss-form-entry">
-                <label class="ss-q-title" for="entry_68">Desired Price (USD)</label>
-                <input type="text" name="entry.68.single" value="5.00" class="default-value required decimalTwo dollarSign" id="entry_68" onkeyup="getPrice('entry_68', 'hs-price')" >
-                <label id="low-price"></label>
-              </div>
-            </div>
-          </div>
-
-          <br> 
-          <div>
-            <div class="ss-item ss-item-required ss-text">
-              <div class="ss-form-entry">
-                <label class="ss-q-title" for="entry_67">Link to Widget icon</label>
-                <input type="text" name="entry.67.single" value="http://dl.dropbox.com/u/70841774/icon70.png" class="default-value required url" id="entry_67" onkeyup="getIcon('entry_67', 'hs-icon')" onclick="getIcon('entry_67', 'hs-icon')">
-                <label id="icon-failure"></label>
-              </div>
-            </div>
-          </div>
-
-          <br> 
-          <div>
-            <div class="ss-item ss-item-required ss-text">
-              <div class="ss-form-entry">
-                <label class="ss-q-title" for="entry_80">Description</label>
-                <label class="ss-q-help" for="entry_80"></label>
-              </br>
-              <textarea name="entry.80.single" rows="6" cols="35" class="help-text required" id="entry_80" onkeyup="getData('entry_80', 'hs-description')" minlength="2">Get [GAME NAME] instantly! Cross-platform and DRM free.</textarea>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <div style="float:left; padding-left:20px">
-          <br> 
-          <div>
-            <div class="ss-item  ss-checkbox">
-              <div class="ss-form-entry">
-                <label class="ss-q-title" for="entry_33" align="right">What will be hosted</label>
-                <label class="ss-q-help" for="entry_33"></label>
-
-                <ul>
-                  <li class="ss-choice-item">
-                    <label class="ss-choice-label">
-                      <input type="checkbox" name="entry.33.group" value="PC Build" class="ss-q-checkbox" id="group_33_1" onclick="toggle(this.id, 'hs-windows')" checked="checked">
-                      PC Build
-                    </label>
-                  </li> 
-
-                  <li class="ss-choice-item">
-                    <label class="ss-choice-label">
-                      <input type="checkbox" name="entry.33.group" value="Mac Build" class="ss-q-checkbox" id="group_33_2" onclick="toggle(this.id, 'hs-mac')" checked="checked">
-                      Mac Build
-                    </label>
-                  </li> 
-
-                  <li class="ss-choice-item">
-                    <label class="ss-choice-label">
-                      <input type="checkbox" name="entry.33.group" value="Linux Build" class="ss-q-checkbox" id="group_33_3" onclick="toggle(this.id, 'hs-linux')">
-                        Linux Build
-                    </label>
-                  </li> 
-                  
-                  <li class="ss-choice-item">
-                    <label class="ss-choice-label">
-                      <input type="checkbox" name="entry.33.group" value="Android" class="ss-q-checkbox" id="group_33_4" onclick="toggle(this.id, 'hs-android')">
-                        Android Build
-                    </label>
-                  </li>
-
-                  <li class="ss-choice-item">
-                    <label class="ss-choice-label">
-                      <input type="checkbox" name="entry.33.group" value="Soundtrack" class="ss-q-checkbox" id="group_33_5" onclick="toggle(this.id, 'hs-soundtrack')">
-                        Soundtrack
-                    </label>
-                  </li>
-                  
-                  <li class="ss-choice-item">
-                    <input type="checkbox" name="entry.33.group" value="__option__" class="ss-q-checkbox" id="other_option:33">
-                      <label for="other_option:33">
-                        Other:
-                      </label>
-                    <input type="text" name="entry.33.group.other_option_" value="keys, concept art, etc." class="default-value">
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </ul>
-      
-      <!--I need all these breaks right now, otherwise the next section is bollucks -->
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-
-      <h2>Information for Widget</h2>
-      <ul class='productlist'>  
-        <br> 
-        <div class="errorbox-good">
-          <div class="ss-item ss-item-required ss-text">
-            <div class="ss-form-entry">
-              <label class="ss-q-title" for="entry_29">Developer&#39;s website or store page</label>
-              <input type="text" name="entry.29.single" value="http://www.your-website.com" style="width: 175px" class="default-value required url" id="entry_29">
-            </div>
-          </div>
-        </div>
-        
-        <br> 
-        <div class="errorbox-good">
-          <div class="ss-item ss-item-required ss-text">
-            <div class="ss-form-entry">
-              <label class="ss-q-title" for="entry_31">Email address for technical support questions</label>
-              <label class="ss-q-help" for="entry_31"></label>
-              <input type="text" name="entry.31.single" value="support@your-company.com" style="width: 175px" class="default-value required email" id="entry_31">
-            </div>
-          </div>
-        </div>
-
-        <br> 
-        <div class="errorbox-good">
-          <div class="ss-item ss-item-required ss-paragraph-text">
-            <div class="ss-form-entry">
-              <label class="ss-q-title" for="entry_34">Please provide links to all files below, or e-mail directly to builds@humblebundle.com</label>
-              <br>
-              <label class="directions" for="entry_34">(FTP, Dropbox or direct links will all work for this section)</label>
-              <br>
-              <label class="directions">For builds, please follow the format "GameName-Platform-Version.Extension" and include an MD5 for verification</label>
-              <textarea name="entry.34.single" rows="8" cols="75" class="help-text required" id="entry_34">humblebundlethegame-windows-1.01.exe  (where the MD5 would go), 
-humblebundlethegame-mac-1.01.dmg  (where the MD5 would go)</textarea>
-            </div>
-          </div>
-        </div>
-
-      </ul>
-
-      <h2>The Actual Agreement</h2>
-      <!--<a href="http://dl.dropbox.com/u/70615435/sandbox_widget_4%3A24/Humble%20Store%20Agreement%204_24_12.pdf">Download a copy</a>-->
-      <!--<embed src="http://dl.dropbox.com/u/70615435/sandbox_widget_4%3A24/Humble%20Store%20Agreement%204_24_12.pdf" width="95%" height="500" style="border-style:solid; border-width:5px; border-color:#CCCCCC">-->
-
-      <iframe src="https://docs.google.com/a/humblebundle.com/viewer?authuser=0&srcid=0B_dZKOrasVjpTmNGZUxrUmwwWHM&pid=explorer&a=v&chrome=false&embedded=true" width="100%" height="500"></iframe>
-
-
-      <ul class='productlist'>
-        <div class="ss-form-desc ss-no-ignore-whitespace"></div>
-
-        <br> 
-        <div class="errorbox-good">
-          <div class="ss-item ss-item-required ss-checkbox">
-            <div class="ss-form-entry">
-              <label class="ss-q-title" for="entry_16">I agree to the terms</label>
-                  <input type="checkbox" name="entry.16.group" value="I agree" class="ss-q-checkbox required" id="group_16_1">
-              </label>      
-            </div>
-          </div>
-        </div>
-
-        <br>
-        <input type="hidden" name="pageNumber" value="0">
-        <input type="hidden" name="backupCache" value="">
-
-        <div class="ss-item ss-navigate">
-          <div class="ss-form-entry">
-            <input type="submit" name="submit" value="Submit">
-          </div>
-        </div>
-      </ul>
-      </form>
-    </div>
-  </div>
-</div>
-<div id='footer'>
-  <a href='https://www.humblebundle.com/contact'>Contact Us</a> &nbsp;&bull;&nbsp;
-  <a href='https://www.humblebundle.com/'>Humble Bundle</a>
-</div>
-
-</body>
+<table align="center" border="0" style="padding:0px">
+				<tr>
+					<td>
+	        			<img src="http://dl.dropbox.com/u/70615435/Humble_NDA/Screen%20Shot%202012-06-28%20at%2010.19.45%20AM.png" alt="Step 1" height="388px" width="232px" style="display:inline; margin:10px"/>
+	        		</td>
+	        		<td>
+		        		<img src="http://dl.dropbox.com/u/70615435/Humble_NDA/Screen%20Shot%202012-06-28%20at%2010.19.33%20AM.png" alt="Step 2" height="388px" width="232px" style="display:inline; margin:10px"/>
+		        	</td>
+		        	<td>
+		        		<img src="http://dl.dropbox.com/u/70615435/Humble_NDA/Screen%20Shot%202012-06-28%20at%2010.19.14%20AM.png" alt="Step 3" height="388px" width="232px" style="display:inline; margin:10px"/>
+		        	</td>
+		        </tr>
+		        <tr>
+		        	<td>
+		        		<p align="center">Hit "Menu"</p>
+		        		
+		        		<p align="center"> Hit "Settings"</p>
+		        	</td>
+		        	<td>
+		        		<p align="center">Find "About Phone"</p>
+		        	</td>
+		        	<td>
+		        		<p align="center">"Model Number"</p>
+		        			
+		        		<p align="center"> "Firmware" (or "Android") Version</p>
+		        			
+		        	</td>
+		        </tr>
+		    </table>
+    </body>
 </html>
-

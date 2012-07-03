@@ -1,0 +1,1085 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<link rel="shortcut icon" href="http://www.humblebundle.com/favicon.ico" type="image/x-icon">
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<title>Humble Bundle Store BETA Agreement</title>
+
+<style type='text/css'>
+/* base.css */
+body {
+  background:#eee;
+  font-family: "Helvetica Neue",Helvetica, sans-serif;
+  font-weight: 300;
+  font-size:16px;
+  margin:0;
+  padding:0;
+  -webkit-font-smoothing:antialiased;
+}
+#logo {
+  background: url(/main/main-logo.png ) no-repeat;
+  height: 94px;
+  width: 700px;
+  margin: 40px auto;
+}
+
+#form {
+  padding-top: 24px;
+  color: #ddd;
+}
+
+a {
+  color: #888;
+}
+h1 {
+  margin: 0;
+}
+h2 {
+  font-weight: 200;
+}
+h3 {
+  color: #aaa;
+  font-weight: 200;
+  font-size: 16px;
+  font-style: italic;
+  padding: 0;
+  margin: 0;
+
+}
+
+#footer {
+  color: #ccc;
+  font-weight: bold;
+  height: 30px;
+  text-align: center;
+  width: 100%;
+  margin: 30px 0;
+}
+
+#wrapper {
+  height: 100%;
+  width: 871px;
+  margin: auto;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 20px;
+}
+
+#papers-top {
+  position:relative;
+  top:0;
+  left:0;
+  height:280px;
+  width:831px;
+  background:url(/main/base/papers.png) no-repeat;
+}
+#papers-bottom {
+  position:relative;
+  bottom:0;
+  left:0;
+  height:22px;
+  width:831px;
+  background:url(/main/base/papers.png) 0 bottom no-repeat;
+}
+#papers-mid {
+  position:relative;
+  top:280px;
+  bottom:22px;
+  left:0;
+  width:831px;
+  background:url(/main/base/papers-mid.png) repeat-y;
+}
+#papers-content {
+  position:relative;
+  width:800px;
+  margin:0 auto;
+  padding:30px 0;
+  min-height:290px;
+  top:-280px;
+
+}
+  .account-popup {
+  font-family: "Helvetica Neue",Helvetica, sans-serif;
+  font-weight: 300;
+  font-size:16px;
+}
+.account-popup a {
+  color:#999999;
+}
+.account-popup.outer-shadow {
+  box-shadow: 0 -1px 25px #888;
+  border: 1px solid #c5c5c5;
+  margin-left:50%;
+  top:200px;
+  position:fixed;
+  z-index: 9999;
+  border-radius: 7px;
+  left:-210px;
+
+  display: none;
+}
+
+.account-popup.content {
+  border-radius: 7px;
+  box-shadow: inset 0 -1px 6px #aaa;
+  color: #999999;
+  padding: 20px;
+  background: #f8f8f8;
+  width: 360px;
+  position: relative;
+  /*height:380px;*/
+  text-align: center;
+}
+
+.account-popup .no-center {
+  text-align: right;
+  position: relative;
+}
+
+.account-popup .content h1 {
+  font-size:24px;
+  text-shadow: 0 0 1px #eee;
+  margin: 0 0 20px 0;
+  margin-right: 19px; /* re-center the text (compensate for the image) */
+  color:#666;
+}
+.account-popup .content h1.noimg {
+  margin-right: 0;
+}
+.account-popup .content h1 img {
+  position: relative;
+  top:5px;
+  margin-right:15px;
+}
+
+.account-popup .content h2 {
+  font-size:14px;
+  font-weight: 300;
+  text-shadow: 0 0 1px #eee;
+  margin: 20px 0 0 0;
+  color:#666;
+}
+
+.account-popup input[type='text'], .account-popup input[type='password'] {
+  background: none;
+  border: 1px solid #ccc;
+  border-top: #999;
+  border-left: #999;
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px #bbb inset;
+  padding: 9px;
+  font-size:16px;
+  color:#555;
+  display: block;
+  width: 342px;
+  margin: 0;
+}
+@-moz-document url-prefix() {
+   .account-popup input[type='text'], .account-popup input[type='password'] {
+        padding-top:7px;
+    }
+}
+
+.account-popup form p {
+  text-align: left;
+  position:relative;
+}
+.account-infield {
+  color: #666;
+  font-size:20px;
+  position:absolute;
+  top:6px;
+  left:10px;
+  z-index: 1:
+}
+.account-input {
+  position: relative;
+  z-index: 2;
+}
+
+.account-popup .input-holder {
+}
+
+.green-button {
+  background: #d1efb3; /* Old browsers */
+  background: -moz-linear-gradient(top, #d1efb3 0%, #a4cc7d 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d1efb3), color-stop(100%,#a4cc7d)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #d1efb3 0%,#a4cc7d 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #d1efb3 0%,#a4cc7d 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #d1efb3 0%,#a4cc7d 100%); /* IE10+ */
+  background: linear-gradient(top, #d1efb3 0%,#a4cc7d 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d1efb3', endColorstr='#a4cc7d',GradientType=0 ); /* IE6-9 */
+  border: 1px solid rgb(167, 207, 114);
+  color: rgb(85,128,26);
+  font-size:14px;
+  font-weight:200;
+  text-shadow: 0 1px 1px #ffffff;
+  padding: 5px 8px 5px 8px;
+  border-radius: 3px;
+  margin: 0 0 0 5px;
+  display: inline-block;
+  min-width: 50px;
+  text-align: center;
+}
+
+a:hover .green-button {
+  background: #d1efb3;
+}
+
+.gray-button {
+  background: #e4e4e4; /* Old browsers */
+  background: -moz-linear-gradient(top, #e4e4e4 0%, #c2c2c2 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e4e4e4), color-stop(100%,#c2c2c2)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #e4e4e4 0%,#c2c2c2 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #e4e4e4 0%,#c2c2c2 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #e4e4e4 0%,#c2c2c2 100%); /* IE10+ */
+  background: linear-gradient(top, #e4e4e4 0%,#c2c2c2 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4e4e4', endColorstr='#c2c2c2',GradientType=0 ); /* IE6-9 */
+  border: 1px solid rgb(176, 176, 176);
+  color: rgb(102,102,102);
+  font-size:14px;
+  font-weight:200;
+  text-shadow: 0 1px 2px #fff;
+  padding: 5px 8px 5px 8px;
+  border-radius: 3px;
+  margin: 0 0 0 5px;
+  display: inline-block;
+  min-width: 50px;
+  text-align: center;
+}
+
+a:hover .gray-button {
+  background: #e4e4e4;
+}
+.button-link {
+  cursor:pointer;
+  text-decoration: none;
+}
+
+.grayout {
+  position:fixed;
+  top:0;
+  left:0;
+  z-index: 998;
+  right:0;
+  bottom:0;
+  background: #000;
+  opacity:0.65;
+  display: none;
+}
+
+input[type="text"].classy-input,
+input[type="password"].classy-input {
+  border: 1px solid #CCC;
+  -webkit-box-shadow: inset 0 1px 0 #eee, #fff 0 1px 0;
+  -moz-box-shadow: inset 0 1px 0 #eee, #fff 0 1px 0;
+  box-shadow: inset 0 1px 0 #eee,#fff 0 1px 0;
+  margin: 0;
+  padding: 7px;
+  border-radius: 3px;
+  background-color: white;
+  color: #999;
+}
+
+.classy-input[disabled='disabled']{
+  background: #ccc;
+  color:#333;
+
+}
+
+.link-holder {
+  text-align: left;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  font-size:12px;
+  line-height: 20px;
+}
+
+.account-popup .clearfix {
+  clear:both;
+}
+
+.account-popup .center {
+  float:none;
+  left: 0;
+}
+.account-popup .error-holder {
+  font-size: 14px;
+  color: #f00;
+  min-height:18px;
+}
+
+.account-popup .message-holder {
+  margin-bottom: 20px;
+  line-height: 20px;
+}
+
+.account-popup p {
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+
+.plus-icon {
+  padding-left: 24px;
+  font-size: 16px;
+  background: url('/main/base/plus_button.png') left center no-repeat;
+}
+
+#keystation a.plus-icon {
+  text-decoration: none;
+  color: #555;
+}
+
+.arrow-icon {
+  padding-left: 24px;
+  font-size: 16px;
+  background: url('/main/base/arrow_button.png') left center no-repeat;
+}
+
+.header-text {
+  font-size: 18px;
+}
+
+a.account-link-link {
+  text-decoration: none;
+  color: #555;
+}
+
+
+  #topbar {
+/*  padding: 10px 10px 5px 10px;*/
+  padding: 0 5px 0 5px;
+  height: 45px;
+  background:#222;
+  margin-bottom:30px;
+  color:#eee;
+  box-shadow: 0 0 5px #000;
+}
+.clearfix {
+  clear:both;
+}
+
+.floatRight {
+  float:right;
+  position:relative;
+}
+.topBarRight {
+  float:right;
+}
+.topBarLeft {
+  float:left;
+}
+
+.topBarLogo {
+  font:normal 14px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight:300;
+  letter-spacing:2px;
+  color:#ccc;
+  font-size:30px;
+  margin: 10px 10px 0 0;
+  float:left;
+  text-decoration:none;
+}
+
+.topBarLogo:hover {
+  color:inherit
+}
+
+.constrain-width {
+  width: 913px;
+  margin: auto;
+}
+#topbar .navbar-button {
+  background: #333;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  color: #ccc;
+  font-size:14px;
+  font-weight:200;
+  /*text-shadow: 0 -1px 1px #000;*/
+  padding: 5px 12px 5px 12px;
+  border-radius: 2px;
+  margin: 5px 1px 10px 5px;
+  display: inline-block;
+}
+#topbar a:hover .navbar-button, #topbar .navbar-button .active {
+  background: #b8b8b8;
+  color:#333;
+  text-shadow: none;
+}
+#nav-menu-expand {
+  float:right;
+}
+
+#nav-menu-expand .navbar-button{
+  text-align: right;
+  padding: 9px 12px 9px 16px;
+  letter-spacing: 1px;
+}
+.nav-menu {
+  display: none;
+  background: #222;
+  top: 45px;
+  right: -4px;
+  text-align: right;
+  position: absolute;
+  z-index: 10;
+  border-radius: 0 0 3px 3px;
+}
+
+#topbar .nav-menu span.navbar-button {
+  margin: 0 5px 5px 5px;
+  min-width:100px;
+}
+
+.inline-gear, .navbar-button .expand-icon {
+  opacity: 0.6;
+  width: 16px;
+  height: 16px;
+  margin-left: 10px;
+  margin-bottom: -3px;
+}
+
+#topbar .beta {
+  left:10px;
+  top:-4px;
+  padding: 4px 6px 4px 7px;
+  position: relative;
+  opacity:.7;
+  border-radius:4px;
+  font-size:14px;
+  background: #eee;
+  color: #000;
+  font-weight:normal;
+}
+
+  
+  ul.productlist a {
+    color: #666;
+  }
+
+  ul.productlist li {
+    line-height: 1.4em;
+  }
+
+  li.hiddenproduct {
+    font-style: italic;
+  }
+
+  ul.productlist li.hiddenproduct a {
+    color: #aaa;
+  }
+
+/*This is where I start customizing things*/
+
+  ul.productlist li{
+  	list-style-type: none;
+  }
+
+/*I added all of the widget CSS here */
+body {
+  margin:0;
+  padding:0;
+}
+#hs-widget {
+  font:14px Helvetica;
+  color:#999;
+  text-shadow:0 1px 0 rgba(255,255,255,0.75);
+  width:550px;
+  height:264px;
+  background:url(http://cdn.humblebundle.com/store/bg.png) no-repeat;
+  position:relative;
+}
+#hs-container {
+  width:534px;
+  height:66px;
+  background:url(http://cdn.humblebundle.com/store/container.png) no-repeat;
+  position:absolute;
+  left:8px;
+  bottom:28px;
+  text-align:center;
+}
+#hs-container input {
+  padding:12px 7px 0px 7px;
+}
+#hs-email {
+  background:url(http://cdn.humblebundle.com/store/textentry.png) no-repeat;
+  width:340px;
+  height:35px;
+  position:relative;
+}
+#hs-emailfield {
+  border:none;
+  background:transparent;
+  position:absolute;
+  top:0;
+  left:0;
+  width:323px;
+  height:100%;
+  font:14px Helvetica;
+  padding:0 8px;
+  box-sizing:content-box;
+  line-height:35px;
+  display: block;
+}
+#forgotemailaddress {
+  padding-left: 24px;
+  background: url(http://cdn.humblebundle.com/store/arrow_214F83.png) no-repeat left center;
+  color: #000;
+  display: none;
+}
+#forgotemailaddress a.suggested-email {
+  color: #214F83;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+#hw-email-error {
+  padding-left: 20px;
+  background: url(http://cdn.humblebundle.com/store/x.png) no-repeat left center;
+  color: #c00;
+  display: none;
+}
+
+#hs-infield {
+  line-height:35px;
+  padding-left:10px;
+  font-weight:bold;
+  height:35px;
+}
+#hs-caption {
+  position:absolute;
+  left:15px;
+  right: 12px;
+  bottom:107px;
+}
+div#hs-caption div {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+#hs-options {
+  position:absolute;
+  left:13px;
+  right:13px;
+  bottom:134px;
+  height:35px;
+  vertical-align:35px;
+}
+#hs-gift {
+  position:absolute;
+  top:4px;
+  bottom:0;
+  right:0;
+  width:160px;
+}
+#hs-gift * {
+  vertical-align:middle;
+}
+.hs-checkbox {
+  width:20px;
+  height:21px;
+/*  background:url(http://cdn.humblebundle.com/store/checkbox-empty.png) no-repeat;
+  -webkit-appearance:none;*/
+}
+.hs-checkbox:checked {
+/*  background:url(http://cdn.humblebundle.com/store/checkbox-checked.png) no-repeat;*/
+}
+#hs-logo {
+  position:absolute;
+  bottom:8px;
+  right:14px;
+}
+#hs-logo * {
+  font-size:12px;
+  vertical-align:middle;
+}
+#hs-title {
+  font-size:18px;
+  font-weight:bold;
+  color:black;
+  max-width:370px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 30px;
+  float: left;
+}
+#hs-price {
+  font-size:18px;
+  font-weight: bold;
+  color:#77b200;
+  float:left;
+  padding-left:10px;
+}
+#hs-author {
+  color:#666;
+  font-size:12px;
+  margin:2px 0 3px 0;
+  max-width:140px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+}
+#hs-icon {
+  float:left;
+  height:68px;
+  width:68px;
+  background-repeat: no-repeat;
+  margin-top:10px;
+  margin-left:11px;
+  background: url('http://cdn.humblebundle.com/store/icons/default.png')
+}
+#hs-row-2 {
+  float: left;
+  clear: both;
+}
+#hs-platforms {
+}
+#hs-info {
+  float:left;
+  margin-left:8px;
+  margin-top:12px;
+  height:60px;
+  max-width: 463px;
+}
+#hs-linux {
+  float:left;
+  background: url(http://cdn.humblebundle.com/store/linux.png) no-repeat;
+  width: 13px;
+  height: 16px;
+  position:relative;
+  top:2px;
+  padding-right:8px;
+}
+#hs-mac {
+  float:left;
+  background: url(http://cdn.humblebundle.com/store/mac.png) no-repeat;
+  width: 14px;
+  height: 18px;
+  padding-right:10px;
+}
+#hs-windows {
+  float:left;
+  position:relative;
+  top:2px;
+  background: url(http://cdn.humblebundle.com/store/windows.png) no-repeat;
+  width: 18px;
+  height: 16px;
+  padding-right:8px;
+}
+#hs-android {
+  float:left;
+  position:relative;
+  top:0px;
+  background: url(http://cdn.humblebundle.com/store/android.png) no-repeat;
+  width: 13px;
+  height: 18px;
+  padding-right:8px;
+}
+#hs-soundtrack {
+  float:left;
+  position:relative;
+  top:1px;
+  background: url(http://cdn.humblebundle.com/store/soundtrack.png) no-repeat;
+  width: 14px;
+  height: 18px;
+  padding-right:8px;
+}
+#hs-description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 80px;
+  max-width: 300px;
+  float:left;
+  float: left;
+  padding: 0 0 0 10px;
+  margin: 2px 0 0 0;
+  font-size: 12px;
+}
+#hs-holder {
+  float: left;
+  min-width:260px;
+}
+#hs-description a {
+  color:#666;
+}
+#hs-description ul {
+  margin-top:0;
+}
+
+
+.whitebox {
+  position:relative;
+  color:#4a4c45;
+  font-weight:bold;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  width:762px;
+  margin:7px auto 13px auto;
+}
+.whitetop {
+  position:absolute;
+  top:0;
+  width:762px;
+  height:20px;
+  background:url(http://cdn.humblebundle.com/hib3/innerpapers.png) 0 0 no-repeat;
+}
+.whitemid {
+  position:absolute;
+  top:20px;
+  width:762px;
+  bottom:20px;
+  background:url(http://cdn.humblebundle.com/hib3/innerpapers-mid.png);
+}
+.whitebottom {
+  position:absolute;
+  bottom:0;
+  width:762px;
+  height:20px;
+  background:url(http://cdn.humblebundle.com/hib3/innerpapers.png) bottom no-repeat;
+}
+.whitecontent {
+  position:relative;
+  padding:20px;
+}
+.whitecontent .hr {
+  width:760px;
+  background:#e6e6e6;
+}
+
+/* spiel */
+#spiel {
+  text-shadow:0 1px 0 rgba(255,255,255,0.75);
+  line-height:21px;
+  font-size:14px;
+}
+#spiel a {
+  color:#5D801A;
+}
+#videopaperclip {
+  left:-57px !important;
+}
+
+/* order.css */
+.scharity .icon {
+  left:10px;
+  top:7px;
+  height:17px;
+  width:16px;
+  background:url(http://cdn.humblebundle.com/buttons/charity.png) no-repeat;
+}
+
+
+.scharity .a,.scharity.flexbtn {
+  padding-left:30px;
+}
+.sdefault .icon {
+  left:10px;
+  top:6px;
+  height:17px;
+  width:16px;
+  background:url(http://cdn.humblebundle.com/buttons/evenly.png) no-repeat;
+}
+.sdefault .a,.sdefault.flexbtn {
+  padding-left:30px;
+}
+.scustom .icon {
+  left:10px;
+  top:8px;
+  height:17px;
+  width:16px;
+  background:url(http://cdn.humblebundle.com/buttons/custom.png) no-repeat;
+}
+.scustom .a,.scustom.flexbtn {
+  padding-left:30px;
+}
+.sdevelopers .icon {
+  left:10px;
+  top:6px;
+  height:17px;
+  width:16px;
+  background:url(http://cdn.humblebundle.com/buttons/developers.png) no-repeat;
+}
+.sdevelopers .a,.sdevelopers.flexbtn {
+  padding-left:30px;
+}
+#normal {
+  width:100%;
+  margin-top:-7px;
+  font-size:12px;
+  line-height:12px;
+}
+#addorder .whitecontent {
+  height: 22px;
+  overflow:hidden;
+}
+#orderwrapper {
+  bottom: -8px;
+  left: 20px;
+  overflow: hidden;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+#expandorder {
+  display:block;
+  height:44px;
+  text-align:center;
+  color:#5d801a;
+  font-size:16px;
+}
+
+#contribute {
+  padding-top:14px;
+}
+#sadnessimg {
+  background:url(http://cdn.humblebundle.com/hib2/sad_developer.jpg) no-repeat;
+  height:585px;
+  width:698px;
+  margin-top:12px;
+  margin-left:12px;
+}
+#humblereminder {
+  font-style: italic;
+  width:570px;
+  margin-left:30px;
+  font-weight:normal;
+  padding-bottom:7px;
+  font-size:12px;
+  color:#999;
+}
+#orderhelptext {
+  font-weight:normal;
+  color:#999;
+  font-size: 10px;
+  text-shadow: none;
+}
+#orderhelptext a {
+  color: #999;
+}
+#orderhelptext .moredetails {
+  display: none;
+}
+a.suggested-email {
+  color: #03a;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+.buttonwindow {
+  height: 60px;
+  overflow: hidden;
+}
+input[value=Simulator] {
+  top:-19px;
+  position: relative;
+}
+
+#needhelp {
+  color:#999;
+  text-decoration:none;
+  font-style:italic;
+  cursor: default;
+}
+.purchase-in-progress {
+  display: none;
+  position: relative;
+  top:-20px;
+  opacity: 0;
+}
+.purchase-in-progress img {
+  position: relative;
+  top: 6px;
+}
+.purchase-in-progress .processing-text {
+  font-size: 30px;
+  text-align: center;
+}
+
+.orderbuttons {
+  text-align:center;
+  padding:6px 0;
+  position: relative;
+}
+/*changed input to img so the developer can't click the button*/
+.orderbuttons img {
+  margin:0 25px;
+}
+
+.slider-logo {
+  width: 120px;
+}
+
+.subsplit-hider {
+  margin-right: -50px;
+}
+
+
+
+
+/* staples */
+
+.staple {
+  position:absolute;
+  background:url(http://cdn.humblebundle.com/hib2/clip0.png) no-repeat;
+  width:61px;
+  height:24px;
+}
+.s1 {
+  left:14px;
+  top:10px;
+}
+.staple.s2 {
+  top:12px;
+  background-image:url(http://cdn.humblebundle.com/hib2/clip1.png);
+  width:62px;
+  height:22px;
+  right:13px;
+}
+.staple.s3 {
+  top:11px;
+  background-image:url(http://cdn.humblebundle.com/hib2/clip2.png);
+  width:62px;
+  height:22px;
+  left:13px;
+}
+.staple.s4 {
+  top:11px;
+  background-image:url(http://cdn.humblebundle.com/hib2/clip3.png);
+  width:64px;
+  height:18px;
+  right:12px;
+}
+.state-nowrite {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.state-nowrite {
+  display: block;
+}
+
+.state-nowrite-text {
+  opacity:1;
+}
+
+.state-nowrite-content {
+  bottom: 0;
+  color: #eee;
+  font-size: 95%;
+  left: 0;
+  padding: 0 25px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.state-nowrite-content h1 {
+  margin-top: 55px;
+  text-align: center;
+}
+.state-nowrite-content .subheading > a {
+  color: #eee;
+  font-weight: normal;
+}
+.state-nowrite-text {
+  line-height: 150%;
+}
+
+.hs-buttonwindow {
+  height:65px;
+  overflow: hidden;
+}
+.hs-orderbuttons {
+  position: relative;
+}
+#hs-simulator {
+  top:-19px;
+  position: relative;
+}
+.hs-purchase-in-progress {
+  display: none;
+  position: relative;
+  top:-30 px;
+  font-size: 25px;
+}
+.hs-purchase-in-progress img{
+  position: relative;
+  top: 5px;
+}
+
+  }
+
+
+
+</style>
+</head>
+
+<body class="ss-base-body" dir="ltr" itemscope itemtype="http://schema.org/CreativeWork/FormObject">
+<div id='topbar'>
+<div class='constrain-width'>
+<div class='topBarLeft'>
+  <a href='http://dl.dropbox.com/u/70615435/Humble_NDA/Humble-NDA-Form.html' class='topBarLogo'>humble bundle nda<span class='beta'>beta</span></a>
+</div>
+</div>
+</div>
+
+<meta itemprop="name" content="Humble Bundle Store BETA Agreement">
+<meta itemprop="description" content="Humble Store Contract Form for Game Developers">
+<meta itemprop="thumbnailUrl" content="https://docs.google.com/spreadsheet/formthumb?formkey=dHFOUDhfR3ZRREZkd2gtczZIRWF2cHc6MA">
+
+<meta itemprop="embedUrl" content="https://docs.google.com/spreadsheet/embeddedform?formkey=dHFOUDhfR3ZRREZkd2gtczZIRWF2cHc6MA">
+<meta itemprop="faviconUrl" content="//ssl.gstatic.com/docs/spreadsheets/forms/favicon_jfk.png">
+
+<div class='clearfix'></div>
+</div>
+
+<div id='wrapper'>
+    <div id='account-main'>
+      <style type='text/css'>
+  #flash {
+    position:fixed;
+    right: 30px;
+    top:10px;
+    background: black;
+    opacity: .8;
+    border-radius: 10px;
+    color:#eee;
+    padding:20px;
+    min-width: 200px;
+    max-width: 400px;
+    text-align: center;
+    z-index: 99999;
+    box-shadow: 1px 1px 5px #000;
+    display:none;
+  }
+</style>
+<div id='flash'>
+</div>
+
+      
+<h1>Thank You</h1>
+
+<h2>You should receive a confirmation e-mail shortly</h2>
+<ul class='productlist'>
+
+</ul>
+
+    </div>
+  </div>
+  <div id='footer'>
+    <a href='https://www.humblebundle.com/contact'>Contact Us</a> &nbsp;&bull;&nbsp;
+    <a href='http://blog.humblebundle.com/'>Blog</a> &nbsp;&bull;&nbsp;
+    <a href='https://www.humblebundle.com/'>Humble Bundle</a>
+  </div>
+</div>
+
+</div>
+</body>
+</html>
+
