@@ -1,0 +1,417 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<link rel="shortcut icon" href="http://www.humblebundle.com/favicon.ico" type="image/x-icon">
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<title>Humble Bundle Non-Disclosure Agreement</title>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" src="http://jzaefferer.github.com/jquery-validation/jquery.validate.js"></script>
+
+<!--CSS file was created by copying out the latest stylesheets from the Humble Accounts section. Last done on 7/2/2012-->
+<link rel="stylesheet" href="base.css" />
+
+<style>
+
+/*This is to make jQuery data validation look and behave a little nicer*/
+label.error{
+  color: red;
+}
+
+textarea.help-text{
+  color: gray;
+
+}
+
+.black{
+  color: black;
+}
+
+label.directions{
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 800;
+}
+
+
+/*To break the buttons out of the nav bar*/
+  #help-button {
+/*  padding: 10px 10px 5px 10px;*/
+  padding: 0 5px 0 5px;
+  /*height: 45px;*/
+  /*background:#222;*/
+  /*margin-bottom:30px;*/
+  color:#eee;
+  /*box-shadow: 0 0 5px #000;*/
+  display:inline;
+  vertical-align:text-bottom;
+}
+  
+  #help-button .beta {
+  /*left:10px;*/
+  top:-4px;
+  padding: 4px 6px 4px 7px;
+  position: relative;
+  opacity:.7;
+  border-radius:4px;
+  font-size:14px;
+  background: #eee;
+  color: #000;
+  font-weight:normal;
+}
+
+.help-buttonLogo {
+  font:normal 14px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight:300;
+  letter-spacing:2px;
+  color:#ccc;
+  font-size:30px;
+  margin: 0px 0px 0 0;
+  /*float:left;*/
+  text-decoration:none;
+}
+
+input {
+  margin: 5px 0px 15px 0px !important;
+  
+}
+
+  }
+
+label.fancy {
+  background: none;
+  border: 1px solid #ccc;
+  border-top: #999;
+  border-left: #999;
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px #bbb inset;
+  padding: 9px;
+  font-size:16px;
+  width:342px;
+  color:#555;
+  margin-left: 30px;
+}
+
+</style>
+
+<script>
+  $(document).ready(function(){
+    $("#commentForm").validate();
+  });
+
+  // Validate for 2 decimal for money
+  jQuery.validator.addMethod("decimalTwo", function(value, element) {
+    return this.optional(element) || /^(\d{1,3})(\.\d{2})$/.test(value);
+  }, "Must be in US currency format 0.99");
+  
+
+$(document).ready(function(){
+  $("textarea").click(function(){
+    $(this).addClass("black").removeClass("help-text");
+  });
+});
+
+$(document).ready(function(){
+  $("textarea").keyup(function(){
+    $(this).addClass("black").removeClass("help-text");
+  });
+});
+
+
+  /*
+  //Validate for dollar sign for money
+  jQuery.validator.addMethod("dollarSign", function(value, element){
+    return this.optional(element) || /\\$/.test(value);
+  }, "Must have a dollar sign $");
+*/
+
+/**
+ * Written by Rob Schmitt, The Web Developer's Blog
+ * http://webdeveloper.beforeseven.com/
+ */
+ 
+/**
+ * The following variables may be adjusted
+ */
+var active_color = '#000'; // Colour of user provided text
+var inactive_color = 'gray'; // Colour of default text
+ 
+/**
+ * No need to modify anything below this line
+ */
+ 
+$(document).ready(function() {
+  $("input.default-value").css("color", inactive_color);
+  var default_values = new Array();
+  $("input.default-value").focus(function() {
+    if (!default_values[this.id]) {
+      default_values[this.id] = this.value;
+    }
+    if (this.value == default_values[this.id]) {
+      this.value = '';
+      this.style.color = active_color;
+    }
+    $(this).blur(function() {
+      if (this.value == '') {
+        this.style.color = inactive_color;
+        this.value = default_values[this.id];
+      }
+    });
+  });
+});
+
+  </script>
+
+<script>
+function getData(ID1, ID2){
+var input=document.getElementById(ID1);
+var inputValue = input.value;
+document.getElementById(ID2).innerHTML = inputValue;
+}
+
+function getPrice(ID1, ID2){
+var input=document.getElementById(ID1);
+var inputValue = input.value;
+document.getElementById(ID2).innerHTML = "$" + inputValue;
+  if (inputValue < 0.01 && inputValue.length > 3){
+    document.getElementById('low-price').innerHTML = "<br>" + "Offering your game for free is awesome, " + "<br>" + "but maybe too awesome for the Humble Store";
+    document.getElementById('low-price').style.color="red";
+  }else {
+    document.getElementById('low-price').innerHTML = "";
+
+  }
+}
+
+function getIcon(ID1, ID2){
+var input=document.getElementById(ID1);
+var inputValue = input.value;
+
+var img = new Image();
+img.onload = function() {
+  if (this.width !== 68 || this.height !== 68){
+    //alert("Your image is " + this.width + 'x' + this.height + ", but needs to be 68x68 pixels");
+    document.getElementById('icon-failure').innerHTML = "<br>" + "Your image is " + this.width + 'x' + this.height + ", but should be 68x68 pixels";
+    document.getElementById('icon-failure').style.color="red";
+    //entry_67
+  }else {
+    document.getElementById('icon-failure').innerHTML = "";
+
+  }
+}
+img.src = inputValue;
+
+img = '&quot;' + inputValue + '&quot;';
+document.getElementById(ID2).style.backgroundImage = 'url("' + inputValue + '")';
+}
+
+function toggle(ID1, ID2){
+//Checking if select field is enabled
+if (document.getElementById(ID1).checked)
+{
+//Changing the select field state to disabled and changing the value of button to enable
+//console.log("Show" + " , ID1: '" + ID1 + "' , ID2: '" + ID2 + "'");
+document.getElementById(ID2).style.display = 'inline';
+document.getElementById(ID1).checked = true;
+return;
+
+} else {
+//console.log("Hide" + " , ID1: '" + ID1 + "' , ID2: '" + ID2 + "'");
+document.getElementById(ID2).style.display = 'none';
+document.getElementById(ID1).checked = false;
+}
+}
+
+function addDevice(){
+//Checking if select field is enabled
+
+  document.getElementById('device2').style.display = 'block';
+  document.getElementById('deviceButton').style.display = 'none';
+
+  return;
+/*
+if (document.getElementById('device2').style.display = 'none')
+{
+//Changing the select field state to disabled and changing the value of button to enable
+//console.log("Show" + " , ID1: '" + ID1 + "' , ID2: '" + ID2 + "'");
+document.getElementById('device2').style.display = 'block';
+console.log("SOMETHING");
+ return;
+} 
+
+else if (document.getElementById('device3').style.display = 'none')
+{
+//Changing the select field state to disabled and changing the value of button to enable
+console.log("SOMETHING ELSE");
+document.getElementById('device3').style.display = 'block';
+} 
+*/
+
+
+
+}
+</script>
+
+</head>
+
+<body class="ss-base-body" dir="ltr" itemscope itemtype="http://schema.org/CreativeWork/FormObject">
+  <div id='topbar'>
+    <div class='constrain-width'>
+      <div class='topBarLeft'>
+        <a href='http://dl.dropbox.com/u/70615435/Humble_NDA/Humble-NDA-Form.html' class='topBarLogo'>humble bundle nda<span class='beta'>beta</span></a>
+      </div>
+    </div>
+  </div>
+
+
+<meta itemprop="name" content="Humble Bundle NDA">
+<meta itemprop="description" content="Humble Bundle NDA">
+<meta itemprop="thumbnailUrl" content="https://docs.google.com/spreadsheet/formthumb?formkey=dHFVVGJmTm10TlFPcjJfa2Z0azE2NXc6MA">
+
+<meta itemprop="embedUrl" content="https://docs.google.com/spreadsheet/embeddedform?formkey=dHFVVGJmTm10TlFPcjJfa2Z0azE2NXc6MA">
+<meta itemprop="faviconUrl" content="//ssl.gstatic.com/docs/spreadsheets/forms/favicon_jfk.png">
+
+<div class='clearfix'></div>
+
+<div id='wrapper'>
+    <div id='account-main'>
+      <style type='text/css'>
+  #flash {
+    position:fixed;
+    right: 30px;
+    top:10px;
+    background: black;
+    opacity: .8;
+    border-radius: 10px;
+    color:#eee;
+    padding:20px;
+    min-width: 200px;
+    max-width: 400px;
+    text-align: center;
+    z-index: 99999;
+    box-shadow: 1px 1px 5px #000;
+    display:none;
+  }
+</style>
+<div id='flash'></div>
+
+      
+<h1>Tester Information</h1>
+
+<div class="ss-form">
+  <script type="text/javascript">var submitted=false;</script>
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted)
+            {window.location='nda-thank-you.html';}"></iframe>
+      <form action="https://docs.google.com/a/humblebundle.com/spreadsheet/formResponse?formkey=dHFVVGJmTm10TlFPcjJfa2Z0azE2NXc6MA&amp;theme=0AX42CRMsmRFbUy1kN2NjY2Y0Mi1iYWFmLTQxMWMtYjM0NC04NmZmYTIwZDRkMGQ&amp;ifq" method="post" target="hidden_iframe" onsubmit="submitted=true;" id="commentForm"> 
+        <h2>Create your Humble Tester Profile</h2>
+        <ul class='productlist'>
+        
+          <div style="width:300px">
+            <input type="text" name="entry.84.single" value="Name" class="default-value required" minlength="2" >
+  
+            <input type="text" name="entry.85.single" value="Email" class="default-value required email" >
+          </div>
+        </ul>
+          
+
+        <script type="text/javascript">
+        
+        function popup(url) 
+        {
+         var width  = 950;
+         var height = 650;
+         var left   = (screen.width  - width)/2;
+         var top    = (screen.height - height)/2;
+         var params = 'width='+width+', height='+height;
+         params += ', top='+top+', left='+left;
+         params += ', directories=0';
+         params += ', location=0';
+         params += ', menubar=0';
+         params += ', resizable=0';
+         params += ', scrollbars=0';
+         params += ', status=0';
+         params += ', toolbar=0';
+         window.open(url,'', params);
+         
+         return false;
+        }
+        
+        </script>
+
+        <h2 style="display:inline; text-align:left">Device Specifications</h2>
+        <div id='help-button' class='constrain-width'>
+              <a href="javascript: void(0)" onclick="popup('Android_Spec_Help.html')" class='help-buttonLogo'><span class='beta'>?</span></a>
+        </div>
+        
+        <ul>
+          <div style="width:360px">
+            
+            <div id="device1" style="display:block;">
+                    <input type="text" name="entry.86.single" value="Android Model Number" class="default-value required" >
+
+                    <input type="text" name="entry.87.single" value="Firmware/Software Version" class="default-value required" >
+            </div>
+        
+            <div id="device2" style="display:none;">
+              <hr />
+              
+              <input type="text" name="entry.91.single" value="Android Model Number" class="default-value" >
+              
+              <input type="text" name="entry.92.single" value="Firmware/Software" class="default-value" >
+            </div>
+        
+            <div id="device3" style="display:none;">
+              <hr />
+   
+                <input type="text" name="entry.95.single" value="Model Number" class="default-value" >
+              
+                <input type="text" name="entry.96.single" value="Android Firmware/Software" class="default-value">
+            </div>
+        
+            <div id="deviceButton" style="display:block">
+              <div id='help-button' style="float:right; padding-bottom:10px;">
+                <a href="javascript: void(0)" onclick="addDevice()" class='help-buttonLogo'><span class='beta'>+ device</span></a>
+              </div>
+            </div>
+          </div>
+        </ul>
+
+      </br>
+      </br>
+
+
+      <h2 style="display:inline; text-align:left; margin-bottom:15px;">The Actual Agreement</h2>
+      <a href="Humble_NDA.pdf" target="_blank" style="padding-left: 10px;">trouble viewing?</a>
+
+      <br>
+      <br>
+
+
+      <iframe src="Humble_NDA.pdf" width="100%" height="500"></iframe>
+
+      <ul class='productlist'>
+        <br> 
+            <input type="text" name="entry.97.single" value="Date MM/DD/YYY" class="default-value required date">
+        <br> 
+        <label style="font-size:20px;" >I agree to the terms</label>
+            <input type="checkbox" name="entry.99.group" value="I agree" class="ss-q-checkbox required">
+        </label>      
+        <br>
+        <input type="hidden" name="pageNumber" value="0">
+        <input type="hidden" name="backupCache" value="">
+
+        <input class="gray-button" type="submit" name="submit" value="Submit">
+      </ul>
+    
+      </form>
+    </div>
+  </div>
+</div>
+
+<div id='footer'>
+  <a href='https://www.humblebundle.com/contact'>Contact Us</a> &nbsp;&bull;&nbsp;
+  <a href='https://www.humblebundle.com/'>Humble Bundle</a>
+</div>
+
+</body>
+</html>
+
