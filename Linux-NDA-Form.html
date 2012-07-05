@@ -1,5 +1,5 @@
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE HTML>
 <html>
 <head>
 <link rel="shortcut icon" href="http://www.humblebundle.com/favicon.ico" type="image/x-icon">
@@ -257,7 +257,7 @@ document.getElementById('device3').style.display = 'block';
   <div id='topbar'>
     <div class='constrain-width'>
       <div class='topBarLeft'>
-        <a href='Humble-NDA-Form.html' class='topBarLogo'>humble bundle nda<span class='beta'>beta</span></a>
+        <a href='Linux-NDA-Form.html' class='topBarLogo'>humble bundle nda<span class='beta'>beta</span></a>
       </div>
     </div>
   </div>
@@ -301,7 +301,7 @@ document.getElementById('device3').style.display = 'block';
   <script type="text/javascript">var submitted=false;</script>
     <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted)
             {window.location='nda-thank-you.html';}"></iframe>
-      <form action="https://docs.google.com/a/humblebundle.com/spreadsheet/formResponse?formkey=dHFVVGJmTm10TlFPcjJfa2Z0azE2NXc6MA&amp;theme=0AX42CRMsmRFbUy1kN2NjY2Y0Mi1iYWFmLTQxMWMtYjM0NC04NmZmYTIwZDRkMGQ&amp;ifq" method="post" target="hidden_iframe" onsubmit="submitted=true;" id="commentForm"> 
+      <form action="https://docs.google.com/a/humblebundle.com/spreadsheet/formResponse?formkey=dGZYVGZwckVNQkRaVk5zb2NfZ1RMbWc6MA&amp;theme=0AX42CRMsmRFbUy1kN2NjY2Y0Mi1iYWFmLTQxMWMtYjM0NC04NmZmYTIwZDRkMGQ&amp;ifq" method="post" target="hidden_iframe" onsubmit="submitted=true;" id="commentForm"> 
         <h2>Create your Humble Tester Profile</h2>
         <ul class='productlist'>
         
@@ -337,20 +337,23 @@ document.getElementById('device3').style.display = 'block';
         
         </script>
 
-        <h2 style="display:inline; text-align:left">Device Specifications</h2>
+        <h2 style="display:inline; text-align:left">Hardware Specifications</h2>
+        <!--
         <div id='help-button' class='constrain-width'>
               <a href="javascript: void(0)" onclick="popup('Android_Spec_Help.html')" class='help-buttonLogo'><span class='beta'>?</span></a>
         </div>
+      -->
         
         <ul>
           <div style="width:360px">
             
-            <div id="device1" style="display:block;">
-                    <input type="text" name="entry.86.single" value="Android Model Number" class="default-value required" >
-
-                    <input type="text" name="entry.87.single" value="Firmware/Software Version" class="default-value required" >
-            </div>
-        
+            
+                    <input type="text" name="entry.86.single" value="Operating System" class="default-value required" >
+                    <input type="text" name="entry.87.single" value="Processor" class="default-value required" >
+                    <input type="text" name="entry.91.single" value="Graphics Card" class="default-value required" >
+                    <input type="text" name="entry.92.single" value="Graphics Driver" class="default-value required" >
+            
+        <!--
             <div id="device2" style="display:none;">
               <hr />
               
@@ -372,6 +375,7 @@ document.getElementById('device3').style.display = 'block';
                 <a href="javascript: void(0)" onclick="addDevice()" class='help-buttonLogo'><span class='beta'>+ device</span></a>
               </div>
             </div>
+          -->
           </div>
         </ul>
 
