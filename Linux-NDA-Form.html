@@ -5,7 +5,7 @@
 <link rel="shortcut icon" href="http://www.humblebundle.com/favicon.ico" type="image/x-icon">
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
 <title>Humble Bundle Non-Disclosure Agreement</title>
-<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="http://code.jquery.com/jquery-1.7.2.js"></script>
 <script type="text/javascript" src="http://jzaefferer.github.com/jquery-validation/jquery.validate.js"></script>
 
 <!--CSS file was created by copying out the latest stylesheets from the Humble Accounts section. Last done on 7/2/2012-->
@@ -99,36 +99,17 @@ label.fancy {
     $("#commentForm").validate();
   });
 
-  // Validate for 2 decimal for money
-  jQuery.validator.addMethod("decimalTwo", function(value, element) {
-    return this.optional(element) || /^(\d{1,3})(\.\d{2})$/.test(value);
-  }, "Must be in US currency format 0.99");
-  
-
-$(document).ready(function(){
-  $("textarea").click(function(){
-    $(this).addClass("black").removeClass("help-text");
+  $(document).ready(function(){
+    $("input").click(function(){
+      $(this).addClass("black").removeClass("help-text");
+    });
   });
-});
 
-$(document).ready(function(){
-  $("textarea").keyup(function(){
-    $(this).addClass("black").removeClass("help-text");
+  $(document).ready(function(){
+    $("input").keyup(function(){
+      $(this).addClass("black").removeClass("help-text");
+    });
   });
-});
-
-
-  /*
-  //Validate for dollar sign for money
-  jQuery.validator.addMethod("dollarSign", function(value, element){
-    return this.optional(element) || /\\$/.test(value);
-  }, "Must have a dollar sign $");
-*/
-
-/**
- * Written by Rob Schmitt, The Web Developer's Blog
- * http://webdeveloper.beforeseven.com/
- */
  
 /**
  * The following variables may be adjusted
@@ -161,95 +142,6 @@ $(document).ready(function() {
 });
 
   </script>
-
-<script>
-function getData(ID1, ID2){
-var input=document.getElementById(ID1);
-var inputValue = input.value;
-document.getElementById(ID2).innerHTML = inputValue;
-}
-
-function getPrice(ID1, ID2){
-var input=document.getElementById(ID1);
-var inputValue = input.value;
-document.getElementById(ID2).innerHTML = "$" + inputValue;
-  if (inputValue < 0.01 && inputValue.length > 3){
-    document.getElementById('low-price').innerHTML = "<br>" + "Offering your game for free is awesome, " + "<br>" + "but maybe too awesome for the Humble Store";
-    document.getElementById('low-price').style.color="red";
-  }else {
-    document.getElementById('low-price').innerHTML = "";
-
-  }
-}
-
-function getIcon(ID1, ID2){
-var input=document.getElementById(ID1);
-var inputValue = input.value;
-
-var img = new Image();
-img.onload = function() {
-  if (this.width !== 68 || this.height !== 68){
-    //alert("Your image is " + this.width + 'x' + this.height + ", but needs to be 68x68 pixels");
-    document.getElementById('icon-failure').innerHTML = "<br>" + "Your image is " + this.width + 'x' + this.height + ", but should be 68x68 pixels";
-    document.getElementById('icon-failure').style.color="red";
-    //entry_67
-  }else {
-    document.getElementById('icon-failure').innerHTML = "";
-
-  }
-}
-img.src = inputValue;
-
-img = '&quot;' + inputValue + '&quot;';
-document.getElementById(ID2).style.backgroundImage = 'url("' + inputValue + '")';
-}
-
-function toggle(ID1, ID2){
-//Checking if select field is enabled
-if (document.getElementById(ID1).checked)
-{
-//Changing the select field state to disabled and changing the value of button to enable
-//console.log("Show" + " , ID1: '" + ID1 + "' , ID2: '" + ID2 + "'");
-document.getElementById(ID2).style.display = 'inline';
-document.getElementById(ID1).checked = true;
-return;
-
-} else {
-//console.log("Hide" + " , ID1: '" + ID1 + "' , ID2: '" + ID2 + "'");
-document.getElementById(ID2).style.display = 'none';
-document.getElementById(ID1).checked = false;
-}
-}
-
-function addDevice(){
-//Checking if select field is enabled
-
-  document.getElementById('device2').style.display = 'block';
-  document.getElementById('deviceButton').style.display = 'none';
-
-  return;
-/*
-if (document.getElementById('device2').style.display = 'none')
-{
-//Changing the select field state to disabled and changing the value of button to enable
-//console.log("Show" + " , ID1: '" + ID1 + "' , ID2: '" + ID2 + "'");
-document.getElementById('device2').style.display = 'block';
-console.log("SOMETHING");
- return;
-} 
-
-else if (document.getElementById('device3').style.display = 'none')
-{
-//Changing the select field state to disabled and changing the value of button to enable
-console.log("SOMETHING ELSE");
-document.getElementById('device3').style.display = 'block';
-} 
-*/
-
-
-
-}
-</script>
 
 </head>
 
@@ -306,9 +198,9 @@ document.getElementById('device3').style.display = 'block';
         <ul class='productlist'>
         
           <div style="width:300px">
-            <input type="text" name="entry.84.single" value="Name" class="default-value required" minlength="2" >
+            <input type="text" name="entry.84.single" value="Name" class="default-value required" minlength="2" id="one">
   
-            <input type="text" name="entry.85.single" value="Email" class="default-value required email" >
+            <input type="text" name="entry.85.single" value="Email" class="default-value required email" id="two">
           </div>
         </ul>
           
@@ -338,44 +230,16 @@ document.getElementById('device3').style.display = 'block';
         </script>
 
         <h2 style="display:inline; text-align:left">Hardware Specifications</h2>
-        <!--
-        <div id='help-button' class='constrain-width'>
-              <a href="javascript: void(0)" onclick="popup('Android_Spec_Help.html')" class='help-buttonLogo'><span class='beta'>?</span></a>
-        </div>
-      -->
-        
+
         <ul>
           <div style="width:360px">
             
             
-                    <input type="text" name="entry.86.single" value="Operating System" class="default-value required" >
-                    <input type="text" name="entry.87.single" value="Processor" class="default-value required" >
-                    <input type="text" name="entry.91.single" value="Graphics Card" class="default-value required" >
-                    <input type="text" name="entry.92.single" value="Graphics Driver" class="default-value required" >
+                    <input type="text" name="entry.86.single" value="Operating System" class="default-value required" id="three">
+                    <input type="text" name="entry.87.single" value="Processor" class="default-value required" id="four">
+                    <input type="text" name="entry.91.single" value="Graphics Card" class="default-value required" id="five">
+                    <input type="text" name="entry.92.single" value="Graphics Driver" class="default-value required" id="six">
             
-        <!--
-            <div id="device2" style="display:none;">
-              <hr />
-              
-              <input type="text" name="entry.91.single" value="Android Model Number" class="default-value" >
-              
-              <input type="text" name="entry.92.single" value="Firmware/Software" class="default-value" >
-            </div>
-        
-            <div id="device3" style="display:none;">
-              <hr />
-   
-                <input type="text" name="entry.95.single" value="Model Number" class="default-value" >
-              
-                <input type="text" name="entry.96.single" value="Android Firmware/Software" class="default-value">
-            </div>
-        
-            <div id="deviceButton" style="display:block">
-              <div id='help-button' style="float:right; padding-bottom:10px;">
-                <a href="javascript: void(0)" onclick="addDevice()" class='help-buttonLogo'><span class='beta'>+ device</span></a>
-              </div>
-            </div>
-          -->
           </div>
         </ul>
 
@@ -394,7 +258,7 @@ document.getElementById('device3').style.display = 'block';
 
       <ul class='productlist'>
         <br> 
-            <input type="text" name="entry.97.single" value="Date MM/DD/YYY" class="default-value required date">
+            <input type="text" name="entry.97.single" value="Date MM/DD/YYY" class="default-value required date" id="seven" >
         <br> 
         <label style="font-size:20px;" >I agree to the terms</label>
             <input type="checkbox" name="entry.99.group" value="I agree" class="ss-q-checkbox required">
