@@ -1,0 +1,577 @@
+body {
+  margin:0;
+  padding:0;
+}
+#hs-widget {
+  font:14px Helvetica;
+  color:#999;
+  text-shadow:0 1px 0 rgba(255,255,255,0.75);
+  width:550px;
+  height:264px;
+  background:url(http://cdn.humblebundle.com/store/bg.png) no-repeat;
+  position:relative;
+}
+#hs-container {
+  width:534px;
+  height:66px;
+  background:url(http://cdn.humblebundle.com/store/container.png) no-repeat;
+  position:absolute;
+  left:8px;
+  bottom:28px;
+  text-align:center;
+}
+#hs-container input {
+  padding:12px 7px 0px 7px;
+}
+#hs-email {
+  background:url(http://cdn.humblebundle.com/store/textentry.png) no-repeat;
+  width:340px;
+  height:35px;
+  position:relative;
+}
+#hs-emailfield {
+  border:none;
+  background:transparent;
+  position:absolute;
+  top:0;
+  left:0;
+  width:323px;
+  height:100%;
+  font:14px Helvetica;
+  padding:0 8px;
+  box-sizing:content-box;
+  line-height:35px;
+  display: block;
+}
+#hs-tip {
+  border:none;
+  background:url(http://cdn.humblebundle.com/store/tip_textentry.png) no-repeat;
+  width: 86px;
+  height: 23px;
+  padding: 2px 1px 2px 18px;
+  font-size: 16px;
+  font-weight: bold;
+}
+#forgotemailaddress {
+  padding-left: 24px;
+  background: url(http://cdn.humblebundle.com/store/arrow_214F83.png) no-repeat left center;
+  color: #000;
+  display: none;
+}
+#forgotemailaddress a.suggested-email {
+  color: #214F83;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+#hs-email-error {
+  padding-left: 20px;
+  background: url(http://cdn.humblebundle.com/store/x.png) no-repeat left center;
+  color: #c00;
+  display: none;
+}
+#hs-tip-error {
+  padding-left: 20px;
+  background: url(http://cdn.humblebundle.com/store/x.png) no-repeat left center;
+  color: #c00;
+  display: none;
+}
+
+#hs-infield {
+  line-height:35px;
+  padding-left:10px;
+  font-weight:bold;
+  height:35px;
+}
+#hs-caption {
+  position:absolute;
+  left:15px;
+  right: 12px;
+  bottom:107px;
+}
+div#hs-caption div {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+#hs-options {
+  position:absolute;
+  left:13px;
+  right:13px;
+  bottom:134px;
+  height:35px;
+  vertical-align:35px;
+}
+#hs-gift {
+  position:absolute;
+  top:4px;
+  bottom:0;
+  right:0;
+  width:160px;
+}
+#hs-gift * {
+  vertical-align:middle;
+}
+.hs-checkbox {
+  width:20px;
+  height:21px;
+/*  background:url(http://cdn.humblebundle.com/store/checkbox-empty.png) no-repeat;
+  -webkit-appearance:none;*/
+}
+.hs-checkbox:checked {
+/*  background:url(http://cdn.humblebundle.com/store/checkbox-checked.png) no-repeat;*/
+}
+#hs-logo {
+  position:absolute;
+  bottom:8px;
+  right:14px;
+}
+#hs-logo * {
+  font-size:12px;
+  vertical-align:middle;
+}
+#hs-title {
+  font-size:18px;
+  font-weight:bold;
+  color:black;
+
+  max-width:370px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 30px;
+  float: left;
+}
+#hs-price {
+  font-size:18px;
+  font-weight: bold;
+  color:#77b200;
+  float:left;
+  padding-left:10px;
+}
+.on-sale #hs-price {
+  color:#ff7f00;
+}
+.on-sale #hs-price s {
+  color: #000;
+}
+#hs-author {
+  color:#666;
+  font-size:12px;
+  margin:2px 0 3px 0;
+  max-width:140px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+}
+#hs-icon {
+  float:left;
+  height:68px;
+  width:68px;
+  background-repeat: no-repeat;
+  margin-top:10px;
+  margin-left:11px;
+  background: url('http://cdn.humblebundle.com/store/icons/default.png')
+}
+#hs-row-2 {
+  float: left;
+  clear: both;
+}
+#hs-platforms {
+}
+#hs-info {
+  float:left;
+  margin-left:8px;
+  margin-top:12px;
+  height:60px;
+  width: 448px;
+}
+#hs-linux {
+  float:left;
+  background: url(http://cdn.humblebundle.com/store/linux.png) no-repeat;
+  width: 13px;
+  height: 16px;
+  position:relative;
+  top:2px;
+  padding-right:8px;
+}
+#hs-mac {
+  float:left;
+  background: url(http://cdn.humblebundle.com/store/mac.png) no-repeat;
+  width: 14px;
+  height: 18px;
+  padding-right:10px;
+}
+#hs-windows {
+  float:left;
+  position:relative;
+  top:2px;
+  background: url(http://cdn.humblebundle.com/store/windows.png) no-repeat;
+  width: 18px;
+  height: 16px;
+  padding-right:8px;
+}
+#hs-android {
+  float:left;
+  position:relative;
+  top:0px;
+  background: url(http://cdn.humblebundle.com/store/android.png) no-repeat;
+  width: 13px;
+  height: 18px;
+  padding-right:8px;
+}
+#hs-soundtrack {
+  float:left;
+  position:relative;
+  top:1px;
+  background: url(http://cdn.humblebundle.com/store/soundtrack.png) no-repeat;
+  width: 14px;
+  height: 18px;
+  padding-right:8px;
+}
+#hs-description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 80px;
+  max-width: 296px;
+  float:left;
+  float: left;
+  padding: 0 0 0 10px;
+  margin: 2px 0 0 0;
+  font-size: 12px;
+}
+#hs-holder {
+  float: left;
+  min-width:260px;
+}
+#hs-description a {
+  color:#666;
+}
+#hs-description ul {
+  margin-top:0;
+}
+
+
+.whitebox {
+  position:relative;
+  color:#4a4c45;
+  font-weight:bold;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  width:762px;
+  margin:7px auto 13px auto;
+}
+.whitetop {
+  position:absolute;
+  top:0;
+  width:762px;
+  height:20px;
+  background:url(http://cdn.humblebundle.com/hib3/innerpapers.png) 0 0 no-repeat;
+}
+.whitemid {
+  position:absolute;
+  top:20px;
+  width:762px;
+  bottom:20px;
+  background:url(http://cdn.humblebundle.com/hib3/innerpapers-mid.png);
+}
+.whitebottom {
+  position:absolute;
+  bottom:0;
+  width:762px;
+  height:20px;
+  background:url(http://cdn.humblebundle.com/hib3/innerpapers.png) bottom no-repeat;
+}
+.whitecontent {
+  position:relative;
+  padding:20px;
+}
+.whitecontent .hr {
+  width:760px;
+  background:#e6e6e6;
+}
+
+/* spiel */
+#spiel {
+  text-shadow:0 1px 0 rgba(255,255,255,0.75);
+  line-height:21px;
+  font-size:14px;
+}
+#spiel a {
+  color:#5D801A;
+}
+#videopaperclip {
+  left:-57px !important;
+}
+
+/* order.css */
+.scharity .icon {
+  left:10px;
+  top:7px;
+  height:17px;
+  width:16px;
+  background:url(http://cdn.humblebundle.com/buttons/charity.png) no-repeat;
+}
+
+
+.scharity .a,.scharity.flexbtn {
+  padding-left:30px;
+}
+.sdefault .icon {
+  left:10px;
+  top:6px;
+  height:17px;
+  width:16px;
+  background:url(http://cdn.humblebundle.com/buttons/evenly.png) no-repeat;
+}
+.sdefault .a,.sdefault.flexbtn {
+  padding-left:30px;
+}
+.scustom .icon {
+  left:10px;
+  top:8px;
+  height:17px;
+  width:16px;
+  background:url(http://cdn.humblebundle.com/buttons/custom.png) no-repeat;
+}
+.scustom .a,.scustom.flexbtn {
+  padding-left:30px;
+}
+.sdevelopers .icon {
+  left:10px;
+  top:6px;
+  height:17px;
+  width:16px;
+  background:url(http://cdn.humblebundle.com/buttons/developers.png) no-repeat;
+}
+.sdevelopers .a,.sdevelopers.flexbtn {
+  padding-left:30px;
+}
+#normal {
+  width:100%;
+  margin-top:-7px;
+  font-size:12px;
+  line-height:12px;
+}
+#addorder .whitecontent {
+  height: 22px;
+  overflow:hidden;
+}
+#orderwrapper {
+  bottom: -8px;
+  left: 20px;
+  overflow: hidden;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+#expandorder {
+  display:block;
+  height:44px;
+  text-align:center;
+  color:#5d801a;
+  font-size:16px;
+}
+
+#contribute {
+  padding-top:14px;
+}
+#sadnessimg {
+  background:url(http://cdn.humblebundle.com/hib2/sad_developer.jpg) no-repeat;
+  height:585px;
+  width:698px;
+  margin-top:12px;
+  margin-left:12px;
+}
+#humblereminder {
+  font-style: italic;
+  width:570px;
+  margin-left:30px;
+  font-weight:normal;
+  padding-bottom:7px;
+  font-size:12px;
+  color:#999;
+}
+#orderhelptext {
+  font-weight:normal;
+  color:#999;
+  font-size: 10px;
+  text-shadow: none;
+}
+#orderhelptext a {
+  color: #999;
+}
+#orderhelptext .moredetails {
+  display: none;
+}
+a.suggested-email {
+  color: #03a;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+.buttonwindow {
+  height: 60px;
+  overflow: hidden;
+}
+.pay-simulator {
+  top:-19px;
+  position: relative;
+}
+
+#needhelp {
+  color:#999;
+  text-decoration:none;
+  font-style:italic;
+  cursor: default;
+}
+.purchase-in-progress {
+  display: none;
+  position: relative;
+  top:-20px;
+  opacity: 0;
+}
+.purchase-in-progress img {
+  position: relative;
+  top: 6px;
+}
+.purchase-in-progress .processing-text {
+  font-size: 30px;
+  text-align: center;
+}
+
+.orderbuttons {
+  text-align:center;
+  padding:6px 0;
+  position: relative;
+}
+.orderbuttons input {
+  margin:0 25px;
+}
+
+.slider-logo {
+  width: 120px;
+}
+
+.subsplit-hider {
+  margin-right: -50px;
+}
+
+
+/* Accounts styling */
+.login-suggest,
+.logout-suggest {
+  padding: 10px 0 5px;
+}
+
+
+
+/* staples */
+
+.staple {
+  position:absolute;
+  background:url(http://cdn.humblebundle.com/hib2/clip0.png) no-repeat;
+  width:61px;
+  height:24px;
+}
+.s1 {
+  left:14px;
+  top:10px;
+}
+.staple.s2 {
+  top:12px;
+  background-image:url(http://cdn.humblebundle.com/hib2/clip1.png);
+  width:62px;
+  height:22px;
+  right:13px;
+}
+.staple.s3 {
+  top:11px;
+  background-image:url(http://cdn.humblebundle.com/hib2/clip2.png);
+  width:62px;
+  height:22px;
+  left:13px;
+}
+.staple.s4 {
+  top:11px;
+  background-image:url(http://cdn.humblebundle.com/hib2/clip3.png);
+  width:64px;
+  height:18px;
+  right:12px;
+}
+.state-nowrite {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.state-nowrite {
+  display: block;
+}
+
+.state-nowrite-text {
+  opacity:1;
+}
+
+.state-nowrite-content {
+  bottom: 0;
+  color: #eee;
+  font-size: 95%;
+  left: 0;
+  padding: 0 25px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.state-nowrite-content h1 {
+  margin-top: 55px;
+  text-align: center;
+}
+.state-nowrite-content .subheading > a {
+  color: #eee;
+  font-weight: normal;
+}
+.state-nowrite-text {
+  line-height: 150%;
+}
+
+.hs-buttonwindow {
+  height:65px;
+  overflow: hidden;
+}
+.hs-orderbuttons {
+  position: relative;
+}
+#hs-simulator {
+  top:-19px;
+  position: relative;
+}
+.hs-purchase-in-progress {
+  display: none;
+  position: relative;
+  top:-30 px;
+  font-size: 25px;
+}
+.hs-purchase-in-progress img{
+  position: relative;
+  top: 5px;
+}
+.on-sale #hs-ribbon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(http://cdn.humblebundle.com/store/sale_ribbon.png) no-repeat;
+  width: 60px;
+  height: 60px;
+}
+#hs-sale-text {
+  float: right;
+  color:#ff7f00;
+  font-weight: bold;
+  font-size: 12px;
+  text-align: right;
+  width: 100px;
+}
