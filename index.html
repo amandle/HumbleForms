@@ -128,6 +128,11 @@ div.form-fields label {
   text-decoration:none;
 }
 
+label.icon-field:hover {
+    /*display:block;*/
+    color:red;
+  }
+
 </style>
 
 <script>
@@ -416,9 +421,10 @@ function popup(url)
           <input type="text" name="entry.68.single" value="Desired Price (USD)" class="default-value required decimalTwo dollarSign" id="entry_68" onkeyup="getPrice('entry_68', 'hs-price')" >
           <label id="low-price"></label>
         
-          <input type="text" name="entry.67.single" value="Icon" class="default-value required url" id="entry_67" onkeyup="getIcon('entry_67', 'hs-icon')" onclick="getIcon('entry_67', 'hs-icon')">
+          <input type="text" name="entry.67.single" value="Icon (e.g. http://tinyurl.com/humbleIcon)" class="default-value required url" id="entry_67" onkeyup="getIcon('entry_67', 'hs-icon')" onclick="getIcon('entry_67', 'hs-icon')">
+          <!--<div class="icon-field" style="font-size:15px; align:right;">example: http://tinyurl.com/humbleIcon</div>-->
           <label id="icon-failure"></label>
-                
+          
           <textarea name="entry.80.single" rows="6" cols="35" class="help-text required" id="entry_80" onkeyup="getData('entry_80', 'hs-description')" minlength="2">Game Description</textarea>
        </div>
 
