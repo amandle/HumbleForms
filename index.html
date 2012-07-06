@@ -9,471 +9,10 @@
 <script type="text/javascript" src="http://jzaefferer.github.com/jquery-validation/jquery.validate.js"></script>
 <!--<script type="text/javascript" src="http://dl.dropbox.com/u/70615435/sandbox_widget_4%3A24/jquery.formdefaults.js"></script>-->
 
+<link rel="stylesheet" href="widget.css" />
+<link rel="stylesheet" href="base.css" />
+
 <style type='text/css'>
-/* base.css */
-body {
-  background:#eee;
-  font-family: "Helvetica Neue",Helvetica, sans-serif;
-  font-weight: 300;
-  font-size:16px;
-  margin:0;
-  padding:0;
-  -webkit-font-smoothing:antialiased;
-}
-#logo {
-  background: url(/main/main-logo.png ) no-repeat;
-  height: 94px;
-  width: 700px;
-  margin: 40px auto;
-}
-
-#form {
-  padding-top: 24px;
-  color: #ddd;
-}
-
-a {
-  color: #888;
-}
-h1 {
-  margin: 0;
-}
-h2 {
-  font-weight: 200;
-}
-h3 {
-  color: #aaa;
-  font-weight: 200;
-  font-size: 16px;
-  font-style: italic;
-  padding: 0;
-  margin: 0;
-
-}
-
-#footer {
-  color: #ccc;
-  font-weight: bold;
-  height: 30px;
-  text-align: center;
-  width: 100%;
-  margin: 30px 0;
-}
-
-#wrapper {
-  height: 100%;
-  width: 871px;
-  margin: auto;
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  padding: 20px;
-}
-
-#papers-top {
-  position:relative;
-  top:0;
-  left:0;
-  height:280px;
-  width:831px;
-  background:url(/main/base/papers.png) no-repeat;
-}
-#papers-bottom {
-  position:relative;
-  bottom:0;
-  left:0;
-  height:22px;
-  width:831px;
-  background:url(/main/base/papers.png) 0 bottom no-repeat;
-}
-#papers-mid {
-  position:relative;
-  top:280px;
-  bottom:22px;
-  left:0;
-  width:831px;
-  background:url(/main/base/papers-mid.png) repeat-y;
-}
-#papers-content {
-  position:relative;
-  width:800px;
-  margin:0 auto;
-  padding:30px 0;
-  min-height:290px;
-  top:-280px;
-
-}
-  .account-popup {
-  font-family: "Helvetica Neue",Helvetica, sans-serif;
-  font-weight: 300;
-  font-size:16px;
-}
-.account-popup a {
-  color:#999999;
-}
-.account-popup.outer-shadow {
-  box-shadow: 0 -1px 25px #888;
-  border: 1px solid #c5c5c5;
-  margin-left:50%;
-  top:200px;
-  position:fixed;
-  z-index: 9999;
-  border-radius: 7px;
-  left:-210px;
-
-  display: none;
-}
-
-.account-popup.content {
-  border-radius: 7px;
-  box-shadow: inset 0 -1px 6px #aaa;
-  color: #999999;
-  padding: 20px;
-  background: #f8f8f8;
-  width: 360px;
-  position: relative;
-  /*height:380px;*/
-  text-align: center;
-}
-
-.account-popup .no-center {
-  text-align: right;
-  position: relative;
-}
-
-.account-popup .content h1 {
-  font-size:24px;
-  text-shadow: 0 0 1px #eee;
-  margin: 0 0 20px 0;
-  margin-right: 19px; /* re-center the text (compensate for the image) */
-  color:#666;
-}
-.account-popup .content h1.noimg {
-  margin-right: 0;
-}
-.account-popup .content h1 img {
-  position: relative;
-  top:5px;
-  margin-right:15px;
-}
-
-.account-popup .content h2 {
-  font-size:14px;
-  font-weight: 300;
-  text-shadow: 0 0 1px #eee;
-  margin: 20px 0 0 0;
-  color:#666;
-}
-
-.account-popup input[type='text'], .account-popup input[type='password'] {
-  background: none;
-  border: 1px solid #ccc;
-  border-top: #999;
-  border-left: #999;
-  border-radius: 3px;
-  box-shadow: 1px 1px 2px #bbb inset;
-  padding: 9px;
-  font-size:16px;
-  color:#555;
-  display: block;
-  width: 342px;
-  margin: 0;
-}
-@-moz-document url-prefix() {
-   .account-popup input[type='text'], .account-popup input[type='password'] {
-        padding-top:7px;
-    }
-}
-
-.account-popup form p {
-  text-align: left;
-  position:relative;
-}
-.account-infield {
-  color: #666;
-  font-size:20px;
-  position:absolute;
-  top:6px;
-  left:10px;
-  z-index: 1:
-}
-.account-input {
-  position: relative;
-  z-index: 2;
-}
-
-.account-popup .input-holder {
-}
-
-.green-button {
-  background: #d1efb3; /* Old browsers */
-  background: -moz-linear-gradient(top, #d1efb3 0%, #a4cc7d 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d1efb3), color-stop(100%,#a4cc7d)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #d1efb3 0%,#a4cc7d 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #d1efb3 0%,#a4cc7d 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #d1efb3 0%,#a4cc7d 100%); /* IE10+ */
-  background: linear-gradient(top, #d1efb3 0%,#a4cc7d 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d1efb3', endColorstr='#a4cc7d',GradientType=0 ); /* IE6-9 */
-  border: 1px solid rgb(167, 207, 114);
-  color: rgb(85,128,26);
-  font-size:14px;
-  font-weight:200;
-  text-shadow: 0 1px 1px #ffffff;
-  padding: 5px 8px 5px 8px;
-  border-radius: 3px;
-  margin: 0 0 0 5px;
-  display: inline-block;
-  min-width: 50px;
-  text-align: center;
-}
-
-a:hover .green-button {
-  background: #d1efb3;
-}
-
-.gray-button {
-  background: #e4e4e4; /* Old browsers */
-  background: -moz-linear-gradient(top, #e4e4e4 0%, #c2c2c2 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e4e4e4), color-stop(100%,#c2c2c2)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #e4e4e4 0%,#c2c2c2 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #e4e4e4 0%,#c2c2c2 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #e4e4e4 0%,#c2c2c2 100%); /* IE10+ */
-  background: linear-gradient(top, #e4e4e4 0%,#c2c2c2 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4e4e4', endColorstr='#c2c2c2',GradientType=0 ); /* IE6-9 */
-  border: 1px solid rgb(176, 176, 176);
-  color: rgb(102,102,102);
-  font-size:14px;
-  font-weight:200;
-  text-shadow: 0 1px 2px #fff;
-  padding: 5px 8px 5px 8px;
-  border-radius: 3px;
-  margin: 0 0 0 5px;
-  display: inline-block;
-  min-width: 50px;
-  text-align: center;
-}
-
-a:hover .gray-button {
-  background: #e4e4e4;
-}
-.button-link {
-  cursor:pointer;
-  text-decoration: none;
-}
-
-.grayout {
-  position:fixed;
-  top:0;
-  left:0;
-  z-index: 998;
-  right:0;
-  bottom:0;
-  background: #000;
-  opacity:0.65;
-  display: none;
-}
-
-input[type="text"].classy-input,
-input[type="password"].classy-input {
-  border: 1px solid #CCC;
-  -webkit-box-shadow: inset 0 1px 0 #eee, #fff 0 1px 0;
-  -moz-box-shadow: inset 0 1px 0 #eee, #fff 0 1px 0;
-  box-shadow: inset 0 1px 0 #eee,#fff 0 1px 0;
-  margin: 0;
-  padding: 7px;
-  border-radius: 3px;
-  background-color: white;
-  color: #999;
-}
-
-.classy-input[disabled='disabled']{
-  background: #ccc;
-  color:#333;
-
-}
-
-.link-holder {
-  text-align: left;
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  font-size:12px;
-  line-height: 20px;
-}
-
-.account-popup .clearfix {
-  clear:both;
-}
-
-.account-popup .center {
-  float:none;
-  left: 0;
-}
-.account-popup .error-holder {
-  font-size: 14px;
-  color: #f00;
-  min-height:18px;
-}
-
-.account-popup .message-holder {
-  margin-bottom: 20px;
-  line-height: 20px;
-}
-
-.account-popup p {
-  margin: 0 0 20px 0;
-  padding: 0;
-}
-
-.plus-icon {
-  padding-left: 24px;
-  font-size: 16px;
-  background: url('/main/base/plus_button.png') left center no-repeat;
-}
-
-#keystation a.plus-icon {
-  text-decoration: none;
-  color: #555;
-}
-
-.arrow-icon {
-  padding-left: 24px;
-  font-size: 16px;
-  background: url('/main/base/arrow_button.png') left center no-repeat;
-}
-
-.header-text {
-  font-size: 18px;
-}
-
-a.account-link-link {
-  text-decoration: none;
-  color: #555;
-}
-
-
-  #topbar {
-/*  padding: 10px 10px 5px 10px;*/
-  padding: 0 5px 0 5px;
-  height: 45px;
-  background:#222;
-  margin-bottom:30px;
-  color:#eee;
-  box-shadow: 0 0 5px #000;
-}
-.clearfix {
-  clear:both;
-}
-
-.floatRight {
-  float:right;
-  position:relative;
-}
-.topBarRight {
-  float:right;
-}
-.topBarLeft {
-  float:left;
-}
-
-.topBarLogo {
-  font:normal 14px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-weight:300;
-  letter-spacing:2px;
-  color:#ccc;
-  font-size:30px;
-  margin: 10px 10px 0 0;
-  float:left;
-  text-decoration:none;
-}
-
-.topBarLogo:hover {
-  color:inherit
-}
-
-.constrain-width {
-  width: 913px;
-  margin: auto;
-}
-#topbar .navbar-button {
-  background: #333;
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
-  color: #ccc;
-  font-size:14px;
-  font-weight:200;
-  /*text-shadow: 0 -1px 1px #000;*/
-  padding: 5px 12px 5px 12px;
-  border-radius: 2px;
-  margin: 5px 1px 10px 5px;
-  display: inline-block;
-}
-#topbar a:hover .navbar-button, #topbar .navbar-button .active {
-  background: #b8b8b8;
-  color:#333;
-  text-shadow: none;
-}
-#nav-menu-expand {
-  float:right;
-}
-
-#nav-menu-expand .navbar-button{
-  text-align: right;
-  padding: 9px 12px 9px 16px;
-  letter-spacing: 1px;
-}
-.nav-menu {
-  display: none;
-  background: #222;
-  top: 45px;
-  right: -4px;
-  text-align: right;
-  position: absolute;
-  z-index: 10;
-  border-radius: 0 0 3px 3px;
-}
-
-#topbar .nav-menu span.navbar-button {
-  margin: 0 5px 5px 5px;
-  min-width:100px;
-}
-
-.inline-gear, .navbar-button .expand-icon {
-  opacity: 0.6;
-  width: 16px;
-  height: 16px;
-  margin-left: 10px;
-  margin-bottom: -3px;
-}
-
-#topbar .beta {
-  left:10px;
-  top:-4px;
-  padding: 4px 6px 4px 7px;
-  position: relative;
-  opacity:.7;
-  border-radius:4px;
-  font-size:14px;
-  background: #eee;
-  color: #000;
-  font-weight:normal;
-}
-
-  
-  ul.productlist a {
-    color: #666;
-  }
-
-  ul.productlist li {
-    line-height: 1.4em;
-  }
-
-  li.hiddenproduct {
-    font-style: italic;
-  }
-
-  ul.productlist li.hiddenproduct a {
-    color: #aaa;
-  }
 
 /*This is where I start customizing things*/
 
@@ -481,538 +20,10 @@ a.account-link-link {
   	list-style-type: none;
   }
 
-body {
-  margin:0;
-  padding:0;
-}
-#hs-widget {
-  font:14px Helvetica;
-  color:#999;
-  text-shadow:0 1px 0 rgba(255,255,255,0.75);
-  width:550px;
-  height:264px;
-  background:url(http://cdn.humblebundle.com/store/bg.png) no-repeat;
-  position:relative;
-}
-#hs-container {
-  width:534px;
-  height:66px;
-  background:url(http://cdn.humblebundle.com/store/container.png) no-repeat;
-  position:absolute;
-  left:8px;
-  bottom:28px;
-  text-align:center;
-}
-#hs-container input {
-  padding:12px 7px 0px 7px;
-}
-#hs-email {
-  background:url(http://cdn.humblebundle.com/store/textentry.png) no-repeat;
-  width:340px;
-  height:35px;
-  position:relative;
-}
-#hs-emailfield {
-  border:none;
-  background:transparent;
-  position:absolute;
-  top:0;
-  left:0;
-  width:323px;
-  height:100%;
-  font:14px Helvetica;
-  padding:0 8px;
-  box-sizing:content-box;
-  line-height:35px;
-  display: block;
-}
-#forgotemailaddress {
-  padding-left: 24px;
-  background: url(http://cdn.humblebundle.com/store/arrow_214F83.png) no-repeat left center;
-  color: #000;
-  display: none;
-}
-#forgotemailaddress a.suggested-email {
-  color: #214F83;
-  text-decoration: underline;
-  font-style: italic;
-}
 
-#hw-email-error {
-  padding-left: 20px;
-  background: url(http://cdn.humblebundle.com/store/x.png) no-repeat left center;
-  color: #c00;
-  display: none;
-}
-
-#hs-infield {
-  line-height:35px;
-  padding-left:10px;
-  font-weight:bold;
-  height:35px;
-}
-#hs-caption {
-  position:absolute;
-  left:15px;
-  right: 12px;
-  bottom:107px;
-}
-div#hs-caption div {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-}
-#hs-options {
-  position:absolute;
-  left:13px;
-  right:13px;
-  bottom:134px;
-  height:35px;
-  vertical-align:35px;
-}
-#hs-gift {
-  position:absolute;
-  top:4px;
-  bottom:0;
-  right:0;
-  width:160px;
-}
-#hs-gift * {
-  vertical-align:middle;
-}
-.hs-checkbox {
-  width:20px;
-  height:21px;
-/*  background:url(http://cdn.humblebundle.com/store/checkbox-empty.png) no-repeat;
-  -webkit-appearance:none;*/
-}
-.hs-checkbox:checked {
-/*  background:url(http://cdn.humblebundle.com/store/checkbox-checked.png) no-repeat;*/
-}
-#hs-logo {
-  position:absolute;
-  bottom:8px;
-  right:14px;
-}
-#hs-logo * {
-  font-size:12px;
-  vertical-align:middle;
-}
-#hs-title {
-  font-size:18px;
-  font-weight:bold;
-  color:black;
-  max-width:370px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-height: 30px;
-  float: left;
-}
-#hs-price {
-  font-size:18px;
-  font-weight: bold;
-  color:#77b200;
-  float:left;
-  padding-left:10px;
-}
-#hs-author {
-  color:#666;
-  font-size:12px;
-  margin:2px 0 3px 0;
-  max-width:140px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-
-}
-#hs-icon {
-  float:left;
-  height:68px;
-  width:68px;
-  background-repeat: no-repeat;
-  margin-top:10px;
-  margin-left:11px;
-  background: url('http://cdn.humblebundle.com/store/icons/default.png')
-}
-#hs-row-2 {
-  float: left;
-  clear: both;
-}
-#hs-platforms {
-}
-#hs-info {
-  float:left;
-  margin-left:8px;
-  margin-top:12px;
-  height:60px;
-  max-width: 463px;
-}
-#hs-linux {
-  float:left;
-  background: url(http://cdn.humblebundle.com/store/linux.png) no-repeat;
-  width: 13px;
-  height: 16px;
-  position:relative;
-  top:2px;
-  padding-right:8px;
-}
-#hs-mac {
-  float:left;
-  background: url(http://cdn.humblebundle.com/store/mac.png) no-repeat;
-  width: 14px;
-  height: 18px;
-  padding-right:10px;
-}
-#hs-windows {
-  float:left;
-  position:relative;
-  top:2px;
-  background: url(http://cdn.humblebundle.com/store/windows.png) no-repeat;
-  width: 18px;
-  height: 16px;
-  padding-right:8px;
-}
-#hs-android {
-  float:left;
-  position:relative;
-  top:0px;
-  background: url(http://cdn.humblebundle.com/store/android.png) no-repeat;
-  width: 13px;
-  height: 18px;
-  padding-right:8px;
-}
-#hs-soundtrack {
-  float:left;
-  position:relative;
-  top:1px;
-  background: url(http://cdn.humblebundle.com/store/soundtrack.png) no-repeat;
-  width: 14px;
-  height: 18px;
-  padding-right:8px;
-}
-#hs-description {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-height: 80px;
-  max-width: 300px;
-  float:left;
-  float: left;
-  padding: 0 0 0 10px;
-  margin: 2px 0 0 0;
-  font-size: 12px;
-}
-#hs-holder {
-  float: left;
-  min-width:260px;
-}
-#hs-description a {
-  color:#666;
-}
-#hs-description ul {
-  margin-top:0;
-}
-
-
-.whitebox {
-  position:relative;
-  color:#4a4c45;
-  font-weight:bold;
-  text-shadow:0 1px 0 rgba(255,255,255,0.5);
-  width:762px;
-  margin:7px auto 13px auto;
-}
-.whitetop {
-  position:absolute;
-  top:0;
-  width:762px;
-  height:20px;
-  background:url(http://cdn.humblebundle.com/hib3/innerpapers.png) 0 0 no-repeat;
-}
-.whitemid {
-  position:absolute;
-  top:20px;
-  width:762px;
-  bottom:20px;
-  background:url(http://cdn.humblebundle.com/hib3/innerpapers-mid.png);
-}
-.whitebottom {
-  position:absolute;
-  bottom:0;
-  width:762px;
-  height:20px;
-  background:url(http://cdn.humblebundle.com/hib3/innerpapers.png) bottom no-repeat;
-}
-.whitecontent {
-  position:relative;
-  padding:20px;
-}
-.whitecontent .hr {
-  width:760px;
-  background:#e6e6e6;
-}
-
-/* spiel */
-#spiel {
-  text-shadow:0 1px 0 rgba(255,255,255,0.75);
-  line-height:21px;
-  font-size:14px;
-}
-#spiel a {
-  color:#5D801A;
-}
-#videopaperclip {
-  left:-57px !important;
-}
-
-/* order.css */
-.scharity .icon {
-  left:10px;
-  top:7px;
-  height:17px;
-  width:16px;
-  background:url(http://cdn.humblebundle.com/buttons/charity.png) no-repeat;
-}
-
-
-.scharity .a,.scharity.flexbtn {
-  padding-left:30px;
-}
-.sdefault .icon {
-  left:10px;
-  top:6px;
-  height:17px;
-  width:16px;
-  background:url(http://cdn.humblebundle.com/buttons/evenly.png) no-repeat;
-}
-.sdefault .a,.sdefault.flexbtn {
-  padding-left:30px;
-}
-.scustom .icon {
-  left:10px;
-  top:8px;
-  height:17px;
-  width:16px;
-  background:url(http://cdn.humblebundle.com/buttons/custom.png) no-repeat;
-}
-.scustom .a,.scustom.flexbtn {
-  padding-left:30px;
-}
-.sdevelopers .icon {
-  left:10px;
-  top:6px;
-  height:17px;
-  width:16px;
-  background:url(http://cdn.humblebundle.com/buttons/developers.png) no-repeat;
-}
-.sdevelopers .a,.sdevelopers.flexbtn {
-  padding-left:30px;
-}
-#normal {
-  width:100%;
-  margin-top:-7px;
-  font-size:12px;
-  line-height:12px;
-}
-#addorder .whitecontent {
-  height: 22px;
-  overflow:hidden;
-}
-#orderwrapper {
-  bottom: -8px;
-  left: 20px;
-  overflow: hidden;
-  position: absolute;
-  right: 20px;
-  top: 20px;
-}
-#expandorder {
-  display:block;
-  height:44px;
-  text-align:center;
-  color:#5d801a;
-  font-size:16px;
-}
-
-#contribute {
-  padding-top:14px;
-}
-#sadnessimg {
-  background:url(http://cdn.humblebundle.com/hib2/sad_developer.jpg) no-repeat;
-  height:585px;
-  width:698px;
-  margin-top:12px;
-  margin-left:12px;
-}
-#humblereminder {
-  font-style: italic;
-  width:570px;
-  margin-left:30px;
-  font-weight:normal;
-  padding-bottom:7px;
-  font-size:12px;
-  color:#999;
-}
-#orderhelptext {
-  font-weight:normal;
-  color:#999;
-  font-size: 10px;
-  text-shadow: none;
-}
-#orderhelptext a {
-  color: #999;
-}
-#orderhelptext .moredetails {
-  display: none;
-}
-a.suggested-email {
-  color: #03a;
-  text-decoration: underline;
-  font-style: italic;
-}
-
-.buttonwindow {
-  height: 60px;
-  overflow: hidden;
-}
-input[value=Simulator] {
-  top:-19px;
-  position: relative;
-}
-
-#needhelp {
-  color:#999;
-  text-decoration:none;
-  font-style:italic;
-  cursor: default;
-}
-.purchase-in-progress {
-  display: none;
-  position: relative;
-  top:-20px;
-  opacity: 0;
-}
-.purchase-in-progress img {
-  position: relative;
-  top: 6px;
-}
-.purchase-in-progress .processing-text {
-  font-size: 30px;
-  text-align: center;
-}
-
-.orderbuttons {
-  text-align:center;
-  padding:6px 0;
-  position: relative;
-}
 /*changed input to img so the developer can't click the button*/
 .orderbuttons img {
   margin:0 25px;
-}
-
-.slider-logo {
-  width: 120px;
-}
-
-.subsplit-hider {
-  margin-right: -50px;
-}
-
-
-
-
-/* staples */
-
-.staple {
-  position:absolute;
-  background:url(http://cdn.humblebundle.com/hib2/clip0.png) no-repeat;
-  width:61px;
-  height:24px;
-}
-.s1 {
-  left:14px;
-  top:10px;
-}
-.staple.s2 {
-  top:12px;
-  background-image:url(http://cdn.humblebundle.com/hib2/clip1.png);
-  width:62px;
-  height:22px;
-  right:13px;
-}
-.staple.s3 {
-  top:11px;
-  background-image:url(http://cdn.humblebundle.com/hib2/clip2.png);
-  width:62px;
-  height:22px;
-  left:13px;
-}
-.staple.s4 {
-  top:11px;
-  background-image:url(http://cdn.humblebundle.com/hib2/clip3.png);
-  width:64px;
-  height:18px;
-  right:12px;
-}
-.state-nowrite {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-.state-nowrite {
-  display: block;
-}
-
-.state-nowrite-text {
-  opacity:1;
-}
-
-.state-nowrite-content {
-  bottom: 0;
-  color: #eee;
-  font-size: 95%;
-  left: 0;
-  padding: 0 25px;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-.state-nowrite-content h1 {
-  margin-top: 55px;
-  text-align: center;
-}
-.state-nowrite-content .subheading > a {
-  color: #eee;
-  font-weight: normal;
-}
-.state-nowrite-text {
-  line-height: 150%;
-}
-
-.hs-buttonwindow {
-  height:65px;
-  overflow: hidden;
-}
-.hs-orderbuttons {
-  position: relative;
-}
-#hs-simulator {
-  top:-19px;
-  position: relative;
-}
-.hs-purchase-in-progress {
-  display: none;
-  position: relative;
-  top:-30 px;
-  font-size: 25px;
-}
-.hs-purchase-in-progress img{
-  position: relative;
-  top: 5px;
 }
 
 /*This is to make jQuery data validation look and behave a little nicer*/
@@ -1036,9 +47,86 @@ label.directions{
   font-weight: 800;
 }
 
-  }
+div.form-fields input {
+  margin: 5px 0px 15px 0px !important;
+}
+
+div.form-fields textarea {
+  background: none;
+  border: 1px solid #ccc;
+  border-top: #999;
+  border-left: #999;
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px #bbb inset;
+  padding: 9px;
+  font-size:16px;
+  width:342px;
+  /*color:#555;*/
+  /*margin-left: 30px;*/
+}
+
+div.form-fields label {
+  background: none;
+  /*border: 1px solid #ccc;
+  border-top: #999;
+  border-left: #999;
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px #bbb inset;
+  padding: 9px;*/
+  font-size:20px;
+  width:342px;
+  /*color:#555;*/
+  /*margin-left: 30px;*/
+}
+
+/*Changed widget input box because of interference between base.css and widget.css*/
+#hs-email input{
+  margin-left:0px;
+}
 
 
+  a.trouble-viewing:link {text-decoration:none;}    /* unvisited link */
+  a.trouble-viewing:visited {text-decoration:none;} /* visited link */
+  a.trouble-viewing:hover {text-decoration:underline;}   /* mouse over link */
+  a.trouble-viewing:active {text-decoration:underline;}  /* selected link */
+
+
+/*To break the buttons out of the nav bar*/
+  #help-button {
+/*  padding: 10px 10px 5px 10px;*/
+  padding: 0 5px 0 5px;
+  /*height: 45px;*/
+  /*background:#222;*/
+  /*margin-bottom:30px;*/
+  color:#eee;
+  /*box-shadow: 0 0 5px #000;*/
+  display:inline;
+  vertical-align:text-bottom;
+}
+  
+  #help-button .beta {
+  /*left:10px;*/
+  top:-4px;
+  padding: 4px 6px 4px 7px;
+  position: relative;
+  opacity:.7;
+  border-radius:4px;
+  font-size:14px;
+  background: #eee;
+  color: #000;
+  font-weight:normal;
+}
+
+.help-buttonLogo {
+  font:normal 14px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight:300;
+  letter-spacing:2px;
+  color:#ccc;
+  font-size:30px;
+  margin: 0px 0px 0 0;
+  /*float:left;*/
+  text-decoration:none;
+}
 
 </style>
 
@@ -1169,15 +257,36 @@ document.getElementById(ID1).checked = false;
 }
 
 }
-</script>
 
+        
+function popup(url) 
+{
+ var width  = 950;
+ var height = 650;
+ var left   = (screen.width  - width)/2;
+ var top    = (screen.height - height)/2;
+ var params = 'width='+width+', height='+height;
+ params += ', top='+top+', left='+left;
+ params += ', directories=0';
+ params += ', location=0';
+ params += ', menubar=0';
+ params += ', resizable=0';
+ params += ', scrollbars=0';
+ params += ', status=0';
+ params += ', toolbar=0';
+ window.open(url,'', params);
+ 
+ return false;
+}
+
+</script>
 </head>
 
 <body class="ss-base-body" dir="ltr" itemscope itemtype="http://schema.org/CreativeWork/FormObject">
   <div id='topbar'>
     <div class='constrain-width'>
       <div class='topBarLeft'>
-        <a href='./' class='topBarLogo'>humble bundle store agreement<span class='beta'>beta</span></a>
+        <a href='index.html' class='topBarLogo'>humble bundle store agreement<span class='beta'>beta</span></a>
       </div>
     </div>
   </div>
@@ -1194,24 +303,6 @@ document.getElementById(ID1).checked = false;
 
 <div id='wrapper'>
     <div id='account-main'>
-      <style type='text/css'>
-  #flash {
-    position:fixed;
-    right: 30px;
-    top:10px;
-    background: black;
-    opacity: .8;
-    border-radius: 10px;
-    color:#eee;
-    padding:20px;
-    min-width: 200px;
-    max-width: 400px;
-    text-align: center;
-    z-index: 99999;
-    box-shadow: 1px 1px 5px #000;
-    display:none;
-  }
-</style>
 <div id='flash'></div>
 
       
@@ -1224,58 +315,19 @@ document.getElementById(ID1).checked = false;
       <form action="https://docs.google.com/a/humblebundle.com/spreadsheet/formResponse?formkey=dDRROGxlbnVQeGkxSlFRa1hPTDUyYUE6MA&amp;theme=0AX42CRMsmRFbUy1kN2NjY2Y0Mi1iYWFmLTQxMWMtYjM0NC04NmZmYTIwZDRkMGQ&amp;ifq" method="post" target="hidden_iframe" onsubmit="submitted=true;" id="commentForm"> 
         <h2>Create your Humble Store Profile</h2>
         <ul class='productlist'>
-        <div class="errorbox-good">
-          <div class="ss-item ss-item-required ss-text">
-            <div class="ss-form-entry">
-              <label class="ss-q-title" for="entry_7">Name</label>
-              <input type="text" name="entry.7.single" value="First Last" class="default-value required" id="entry_7" minlength="2">
-            </div>
+           
+          <div class="form-fields" style="width:300px">
+            <input type="text" name="entry.7.single" value="Name" class="default-value required" id="entry_7" minlength="2"> 
+          
+            <input type="text" name="entry.15.single" value="Email" class="default-value required email" id="entry_15">
+          
+            <input type="text" name="entry.13.single" value="Position Held" class="default-value required" id="entry_13">
+          
+            <input type="text" name="entry.9.single" value="Date MM/DD/YYYY" class="default-value required date" id="entry_9">
+              
+            <textarea name="entry.18.single" rows="5" cols="48" class="help-text required" id="entry_18">Product(s) to be sold on the Humble Store: (Game, Soundtrack, Concept Art, etc.)</textarea>
           </div>
-        </div>
-
-        <br> 
-        <div class="errorbox-good">
-          <div class="ss-item ss-item-required ss-text">
-            <div class="ss-form-entry">
-              <label class="ss-q-title" for="entry_15">Email</label>
-              <input type="text" name="entry.15.single" value="name@company.com" class="default-value required email" id="entry_15">
-            </div>
-          </div>
-        </div>
-
-        <br> 
-        <div class="errorbox-good">
-          <div class="ss-item ss-item-required ss-text">
-            <div class="ss-form-entry">
-              <label class="ss-q-title" for="entry_13">Position Held</label>
-              <input type="text" name="entry.13.single" value="CEO, Director, etc" class="default-value required" id="entry_13">
-            </div>
-          </div>
-        </div>
-
-
-        <br> 
-        <div class="errorbox-good">
-          <div class="ss-item ss-item-required ss-text">
-            <div class="ss-form-entry">
-              <label class="ss-q-title" for="entry_9">Date</label>
-              <input type="text" name="entry.9.single" value="MM/DD/YYYY" class="default-value required date" id="entry_9">
-            </div>
-          </div>
-        </div>
-
-        <br> 
-        <div class="errorbox-good">
-          <div class="ss-item ss-item-required ss-paragraph-text">
-            <div class="ss-form-entry">
-              <label class="ss-q-title" for="entry_18">Product(s) to be sold on the Humble Store</label>
-              <div>
-                <textarea name="entry.18.single" rows="8" cols="75" class="help-text required" id="entry_18">(Game, Soundtrack, Concept Art, etc.)</textarea>
-              </div>
-            </div>
-          </div>
-        </div>
-      </ul>
+        </ul>
 
       <h2>Build your Humble Store Widget</h2>
 
@@ -1286,7 +338,7 @@ document.getElementById(ID1).checked = false;
        	
         <div id="hs-widget">
           <div id="hs-holder">
-            <div id="hs-icon" style="background-image:url(&quot;http://dl.dropbox.com/u/70841774/icon70.png&quot;);"></div>
+            <div id="hs-icon" style="background-image:url('http://dl.dropbox.com/u/70841774/icon70.png');"></div>
             <div id="hs-info">
               <div id="hs-title">Humble Bundle - The Game!</div>
               <div id="hs-price">$5.00</div>
@@ -1355,212 +407,114 @@ document.getElementById(ID1).checked = false;
       </ul>
 
       <ul class='productlist'>
-        <div style="float:left">
-          <br> 
-          <div>
-            <div class="ss-item ss-item-required ss-text">
-              <div class="ss-form-entry">
-                <label class="ss-q-title" for="entry_26">Game Name</label>
-                <input type="text" name="entry.26.single" value="Humble Bundle - The Game!" class="default-value required" id="entry_26" onkeyup="getData('entry_26', 'hs-title')" >
-              </div>
-            </div>
-          </div>
+        <div class="form-fields" style="width:350px; float:left;">
+          
+          <input type="text" name="entry.26.single" value="Game Name" class="default-value required" id="entry_26" onkeyup="getData('entry_26', 'hs-title')" >
+        
+          <input type="text" name="entry.27.single" value="Developer Name" class="default-value required" id="entry_27" onkeyup="getData('entry_27', 'hs-author')" >
+        
+          <input type="text" name="entry.68.single" value="Desired Price (USD)" class="default-value required decimalTwo dollarSign" id="entry_68" onkeyup="getPrice('entry_68', 'hs-price')" >
+          <label id="low-price"></label>
+        
+          <input type="text" name="entry.67.single" value="Icon" class="default-value required url" id="entry_67" onkeyup="getIcon('entry_67', 'hs-icon')" onclick="getIcon('entry_67', 'hs-icon')">
+          <label id="icon-failure"></label>
+                
+          <textarea name="entry.80.single" rows="6" cols="35" class="help-text required" id="entry_80" onkeyup="getData('entry_80', 'hs-description')" minlength="2">Game Description</textarea>
+       </div>
 
-
-          <br> 
-          <div>
-            <div class="ss-item ss-item-required ss-text">
-              <div class="ss-form-entry">
-                <label class="ss-q-title" for="entry_27">Developer Name </label>
-                <input type="text" name="entry.27.single" value="Humble Bundle Inc." class="default-value required" id="entry_27" onkeyup="getData('entry_27', 'hs-author')" >
-              </div>
-            </div>
-          </div>
-
-          <br> 
-          <div>
-            <div class="ss-item ss-item-required ss-text">
-              <div class="ss-form-entry">
-                <label class="ss-q-title" for="entry_68">Desired Price (USD)</label>
-                <input type="text" name="entry.68.single" value="5.00" class="default-value required decimalTwo dollarSign" id="entry_68" onkeyup="getPrice('entry_68', 'hs-price')" >
-                <label id="low-price"></label>
-              </div>
-            </div>
-          </div>
-
-          <br> 
-          <div>
-            <div class="ss-item ss-item-required ss-text">
-              <div class="ss-form-entry">
-                <label class="ss-q-title" for="entry_67">Link to Widget icon</label>
-                <input type="text" name="entry.67.single" value="http://dl.dropbox.com/u/70841774/icon70.png" class="default-value required url" id="entry_67" onkeyup="getIcon('entry_67', 'hs-icon')" onclick="getIcon('entry_67', 'hs-icon')">
-                <label id="icon-failure"></label>
-              </div>
-            </div>
-          </div>
-
-          <br> 
-          <div>
-            <div class="ss-item ss-item-required ss-text">
-              <div class="ss-form-entry">
-                <label class="ss-q-title" for="entry_80">Description</label>
-                <label class="ss-q-help" for="entry_80"></label>
-              </br>
-              <textarea name="entry.80.single" rows="6" cols="35" class="help-text required" id="entry_80" onkeyup="getData('entry_80', 'hs-description')" minlength="2">Get [GAME NAME] instantly! Cross-platform and DRM free.</textarea>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <div style="float:left; padding-left:20px">
-          <br> 
-          <div>
-            <div class="ss-item  ss-checkbox">
-              <div class="ss-form-entry">
-                <label class="ss-q-title" for="entry_33" align="right">What will be hosted</label>
-                <label class="ss-q-help" for="entry_33"></label>
+        <div class="form-fields" style="float:right;">
+                <label align="right">What will be hosted</label>
 
                 <ul>
-                  <li class="ss-choice-item">
-                    <label class="ss-choice-label">
+                  <li>
+                    <label>
                       <input type="checkbox" name="entry.33.group" value="PC Build" class="ss-q-checkbox" id="group_33_1" onclick="toggle(this.id, 'hs-windows')" checked="checked">
                       PC Build
                     </label>
                   </li> 
 
-                  <li class="ss-choice-item">
-                    <label class="ss-choice-label">
+                  <li>
+                    <label>
                       <input type="checkbox" name="entry.33.group" value="Mac Build" class="ss-q-checkbox" id="group_33_2" onclick="toggle(this.id, 'hs-mac')" checked="checked">
                       Mac Build
                     </label>
                   </li> 
 
-                  <li class="ss-choice-item">
-                    <label class="ss-choice-label">
+                  <li>
+                    <label>
                       <input type="checkbox" name="entry.33.group" value="Linux Build" class="ss-q-checkbox" id="group_33_3" onclick="toggle(this.id, 'hs-linux')">
                         Linux Build
                     </label>
                   </li> 
                   
-                  <li class="ss-choice-item">
-                    <label class="ss-choice-label">
+                  <li>
+                    <label>
                       <input type="checkbox" name="entry.33.group" value="Android" class="ss-q-checkbox" id="group_33_4" onclick="toggle(this.id, 'hs-android')">
                         Android Build
                     </label>
                   </li>
 
-                  <li class="ss-choice-item">
-                    <label class="ss-choice-label">
+                  <li>
+                    <label>
                       <input type="checkbox" name="entry.33.group" value="Soundtrack" class="ss-q-checkbox" id="group_33_5" onclick="toggle(this.id, 'hs-soundtrack')">
                         Soundtrack
                     </label>
                   </li>
                   
-                  <li class="ss-choice-item">
+                  <li>
                     <input type="checkbox" name="entry.33.group" value="__option__" class="ss-q-checkbox" id="other_option:33">
                       <label for="other_option:33">
                         Other:
                       </label>
-                    <input type="text" name="entry.33.group.other_option_" value="keys, concept art, etc." class="default-value">
+                    <input style="width:300px;" type="text" name="entry.33.group.other_option_" value="keys, concept art, etc." class="default-value">
                   </li>
                 </ul>
-              </div>
-            </div>
-          </div>
         </div>
       </ul>
+      <div style="clear:both; padding-top:20px;">    
+      <h2 style="display:inline;">Information for Widget</h2>
       
-      <!--I need all these breaks right now, otherwise the next section is bollucks -->
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-
-      <h2>Information for Widget</h2>
+      <div id='help-button' class='constrain-width'>
+        <a href="javascript: void(0)" onclick="popup('Humble_Store_Build_Help.html')" class='help-buttonLogo'><span class='beta'>?</span></a>
+      </div>
+      </div>
       <ul class='productlist'>  
-        <br> 
-        <div class="errorbox-good">
-          <div class="ss-item ss-item-required ss-text">
-            <div class="ss-form-entry">
-              <label class="ss-q-title" for="entry_29">Developer&#39;s website or store page</label>
-              <input type="text" name="entry.29.single" value="http://www.your-website.com" style="width: 175px" class="default-value required url" id="entry_29">
-            </div>
-          </div>
-        </div>
+        <div class="form-fields" style="width:300px;">
         
-        <br> 
-        <div class="errorbox-good">
-          <div class="ss-item ss-item-required ss-text">
-            <div class="ss-form-entry">
-              <label class="ss-q-title" for="entry_31">Email address for technical support questions</label>
-              <label class="ss-q-help" for="entry_31"></label>
-              <input type="text" name="entry.31.single" value="support@your-company.com" style="width: 175px" class="default-value required email" id="entry_31">
-            </div>
-          </div>
-        </div>
+        <input type="text" name="entry.29.single" value="Developer's Website (http://)" class="default-value required url" id="entry_29">
+      
+        <input type="text" name="entry.31.single" value="Tech Support Email" class="default-value required email" id="entry_31">
+      
+        <textarea name="entry.34.single" rows="5" cols="75" class="help-text required" id="entry_34">Links to builds (with MD5s) and all other content can go here
+        </textarea>
 
-        <br> 
-        <div class="errorbox-good">
-          <div class="ss-item ss-item-required ss-paragraph-text">
-            <div class="ss-form-entry">
-              <label class="ss-q-title" for="entry_34">Please provide links to all files below, or e-mail directly to builds@humblebundle.com</label>
-              <br>
-              <label class="directions" for="entry_34">(FTP, Dropbox or direct links will all work for this section)</label>
-              <br>
-              <label class="directions">For builds, please follow the format "GameName-Platform-Version.Extension" and include an MD5 for verification</label>
-              <textarea name="entry.34.single" rows="8" cols="75" class="help-text required" id="entry_34">humblebundlethegame-windows-1.01.exe  (where the MD5 would go), 
-humblebundlethegame-mac-1.01.dmg  (where the MD5 would go)</textarea>
-            </div>
-          </div>
-        </div>
+        
 
-      </ul>
-
-      <h2>The Actual Agreement</h2>
-      <!--<a href="http://dl.dropbox.com/u/70615435/sandbox_widget_4%3A24/Humble%20Store%20Agreement%204_24_12.pdf">Download a copy</a>-->
-      <!--<embed src="http://dl.dropbox.com/u/70615435/sandbox_widget_4%3A24/Humble%20Store%20Agreement%204_24_12.pdf" width="95%" height="500" style="border-style:solid; border-width:5px; border-color:#CCCCCC">-->
-
-      <iframe src="https://docs.google.com/a/humblebundle.com/viewer?authuser=0&srcid=0B_dZKOrasVjpTmNGZUxrUmwwWHM&pid=explorer&a=v&chrome=false&embedded=true" width="100%" height="500"></iframe>
-
-
-      <ul class='productlist'>
-        <div class="ss-form-desc ss-no-ignore-whitespace"></div>
-
-        <br> 
-        <div class="errorbox-good">
-          <div class="ss-item ss-item-required ss-checkbox">
-            <div class="ss-form-entry">
-              <label class="ss-q-title" for="entry_16">I agree to the terms</label>
-                  <input type="checkbox" name="entry.16.group" value="I agree" class="ss-q-checkbox required" id="group_16_1">
-              </label>      
-            </div>
-          </div>
-        </div>
-
-        <br>
-        <input type="hidden" name="pageNumber" value="0">
-        <input type="hidden" name="backupCache" value="">
-
-        <div class="ss-item ss-navigate">
-          <div class="ss-form-entry">
-            <input type="submit" name="submit" value="Submit">
-          </div>
         </div>
       </ul>
+
+      <h2 style="display:inline; text-align:left; margin-bottom:15px;">The Actual Agreement</h2>
+
+<!--
+      <iframe src="https://docs.google.com/a/humblebundle.com/viewer?authuser=0&srcid=0B_dZKOrasVjpTmNGZUxrUmwwWHM&pid=explorer&a=v&chrome=false&embedded=true" width="100%" height="500"></iframe>-->
+      <a href="Humble_Store_Agreement.pdf" class="trouble-viewing" target="_blank" style="padding-left:10px; font-size:15px;">trouble viewing?</a>
+
+      <br>
+      <br>
+
+      <iframe src="Humble_Store_Agreement.pdf" width="100%" height="500"></iframe>
+
+        <ul class='productlist'>
+            <label style="font-size:20px;" for="entry_16">I agree to the terms</label>
+            <input type="checkbox" name="entry.16.group" value="I agree" class="ss-q-checkbox required" id="group_16_1">
+            
+            <input type="hidden" name="pageNumber" value="0">
+            <input type="hidden" name="backupCache" value="">
+          
+          <div>
+            <input class="gray-button" type="submit" name="submit" value="Submit" style="margin-left:0px; margin-top:10px;">  
+          </div>
+        </ul>
       </form>
     </div>
   </div>
