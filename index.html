@@ -386,7 +386,7 @@ function popup(url)
 
           <div id="hs-caption">
             <div id="forgotemailaddress">Did you mean <a href="#" class="suggested-email">someotherthing@<strong>longdomain.com</strong>?</a> (<a href="#">Nope</a>)</div>
-            <div id="hw-email-error">Please enter a valid email address.</div>
+            <!--<div id="hw-email-error">Please enter a valid email address.</div>-->
             <div id="default-caption">Select one of the payment options below to complete your purchase.</div>
           </div>
           <div id="hs-container">
@@ -403,7 +403,12 @@ function popup(url)
             </div>
           </div>
 
-          <div id="hs-logo"><img src="http://cdn.humblebundle.com/store/logo.png"> <span>Humble Store</span></div>
+          <div id='hs-logo'>
+        <span class='hide-text'>
+          Humble Store
+        </span>
+        
+      </div>
         </div>
         <!--<input type="hidden" value="braid" name="product">
 

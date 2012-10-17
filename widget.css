@@ -8,23 +8,23 @@ body {
   text-shadow:0 1px 0 rgba(255,255,255,0.75);
   width:550px;
   height:264px;
-  background:url(http://cdn.humblebundle.com/store/bg.png) no-repeat;
+  background:url(http://cdn.humblebundle.com/static/hashed/8883e029580f6654386ce9434cac7dfee042c55b.png) no-repeat;
   position:relative;
 }
 #hs-container {
-  width:534px;
-  height:66px;
-  background:url(http://cdn.humblebundle.com/store/container.png) no-repeat;
-  position:absolute;
-  left:8px;
-  bottom:28px;
-  text-align:center;
+  width: 534px;
+  height: 66px;
+  background: url(http://cdn.humblebundle.com/static/hashed/89954c55f5f50303d0a9fca70b736c6158b47af0.png) no-repeat;
+  position: absolute;
+  left: 8px;
+  bottom: 38px;
+  text-align: center;
 }
 #hs-container input {
   padding:12px 7px 0px 7px;
 }
 #hs-email {
-  background:url(http://cdn.humblebundle.com/store/textentry.png) no-repeat;
+  background:url(http://cdn.humblebundle.com/static/hashed/d6f8c83559dca1a4e7e10e98489eb2100889502d.png) no-repeat;
   width:340px;
   height:35px;
   position:relative;
@@ -43,18 +43,10 @@ body {
   line-height:35px;
   display: block;
 }
-#hs-tip {
-  border:none;
-  background:url(http://cdn.humblebundle.com/store/tip_textentry.png) no-repeat;
-  width: 86px;
-  height: 23px;
-  padding: 2px 1px 2px 18px;
-  font-size: 16px;
-  font-weight: bold;
-}
+
 #forgotemailaddress {
   padding-left: 24px;
-  background: url(http://cdn.humblebundle.com/store/arrow_214F83.png) no-repeat left center;
+  background: url(http://cdn.humblebundle.com/static/hashed/9d2999bff30bc2d7deb46576da0e4dc736e675f0.png) no-repeat left center;
   color: #000;
   display: none;
 }
@@ -66,13 +58,13 @@ body {
 
 #hs-email-error {
   padding-left: 20px;
-  background: url(http://cdn.humblebundle.com/store/x.png) no-repeat left center;
+  background: url(http://cdn.humblebundle.com/static/hashed/28eb215f934ceea38d34b99c4bc98e6139987ace.png) no-repeat left center;
   color: #c00;
   display: none;
 }
 #hs-tip-error {
   padding-left: 20px;
-  background: url(http://cdn.humblebundle.com/store/x.png) no-repeat left center;
+  background: url(http://cdn.humblebundle.com/static/hashed/28eb215f934ceea38d34b99c4bc98e6139987ace.png) no-repeat left center;
   color: #c00;
   display: none;
 }
@@ -84,10 +76,10 @@ body {
   height:35px;
 }
 #hs-caption {
-  position:absolute;
-  left:15px;
+  position: absolute;
+  left: 15px;
   right: 12px;
-  bottom:107px;
+  bottom: 114px;
 }
 div#hs-caption div {
   position: absolute;
@@ -95,12 +87,12 @@ div#hs-caption div {
   bottom: 0;
 }
 #hs-options {
-  position:absolute;
-  left:13px;
-  right:13px;
-  bottom:134px;
-  height:35px;
-  vertical-align:35px;
+  position: absolute;
+  left: 13px;
+  right: 13px;
+  bottom: 139px;
+  height: 35px;
+  vertical-align: 35px;
 }
 #hs-gift {
   position:absolute;
@@ -115,41 +107,115 @@ div#hs-caption div {
 .hs-checkbox {
   width:20px;
   height:21px;
-/*  background:url(http://cdn.humblebundle.com/store/checkbox-empty.png) no-repeat;
+/*  background:url(http://cdn.humblebundle.com/static/hashed/09f8b09e37759ba7f8bcc7048060d73dcf3e2334.png) no-repeat;
   -webkit-appearance:none;*/
 }
 .hs-checkbox:checked {
-/*  background:url(http://cdn.humblebundle.com/store/checkbox-checked.png) no-repeat;*/
+/*  background:url(http://cdn.humblebundle.com/static/hashed/8413799b7d1a77d5f5cf46c7db34405b1ef0d227.png) no-repeat;*/
 }
 #hs-logo {
-  position:absolute;
-  bottom:8px;
-  right:14px;
+  position: absolute;
+  bottom: 17px;
+  right: 14px;
+  width: 89px;
+  height: 16px;
+  background: url(http://cdn.humblebundle.com/static/hashed/b08807b1a95dbd7f56cb2634cd94a0a109c01f62.png) no-repeat;
 }
-#hs-logo * {
-  font-size:12px;
-  vertical-align:middle;
+a.hide-text {
+  cursor: pointer;
+}
+.hide-text {
+  display: block;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
 }
 #hs-title {
   font-size:18px;
   font-weight:bold;
   color:black;
-
   max-width:370px;
-
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-height: 30px;
   float: left;
 }
-#hs-price {
-  font-size:18px;
-  font-weight: bold;
-  color:#77b200;
-  float:left;
-  padding-left:10px;
+.on-sale #hs-title {
+  max-width:212px;
 }
+#hs-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #77b200;
+  float: left;
+  padding-left: 12px;
+  height: 24px;
+  position: relative;
+}
+#hs-title, #hs-price {
+  line-height: 22px;
+}
+
+/* support for tipping the developer */
+#hs-price.price-tip-button {
+  background: url(http://cdn.humblebundle.com/static/hashed/feeff1e484c6c7c8a7b305a294b72d6df8411b18.png) no-repeat;
+  width: 95px;
+  padding: 3px 0 0 12px;
+  float: left;
+  margin-left: 8px;
+  margin-top: -3px;
+}
+#hs-price.price-tip-button #hs-price-inner {
+  cursor: pointer;
+}
+.price-tip-button #hs-tip {
+  display: none;
+}
+#hs-tip-popup {
+  background: url(http://cdn.humblebundle.com/static/hashed/8c298d871b4729a957d1b9d3d7d7b69276083876.png) no-repeat;
+  width: 142px;
+  height: 40px;
+  padding: 20px 15px;
+  position: absolute;
+  top: 33px;
+  left: -30px;
+  z-index: 10;
+  text-align: center;
+  line-height: 14px;
+  font-size: 11px;
+  font-weight: normal;
+  text-shadow: none;
+  color: #fff;
+  display: none;
+}
+.relative-position {
+  position: relative;
+}
+#hs-tip-input {
+  border: none;
+  background: url(http://cdn.humblebundle.com/static/hashed/d559f93cd7fa65c71ad6d49eaec60ef59a227f0e.png);
+  width: 86px;
+  height: 16px;
+  padding: 5px 1px 6px 18px;
+  font-size: 16px;
+  font-weight: bold;
+  position: absolute;
+  top: -3px;
+  left: 0;
+  color:#222;
+}
+#hs-tip-close {
+  position: absolute;
+  top: 1px;
+  height: 18px;
+  width: 18px;
+  left: 82px;
+}
+#hs-tip-close img {
+  border: none;
+}
+
 .on-sale #hs-price {
   color:#ff7f00;
 }
@@ -173,7 +239,7 @@ div#hs-caption div {
   background-repeat: no-repeat;
   margin-top:10px;
   margin-left:11px;
-  background: url('http://cdn.humblebundle.com/store/icons/default.png')
+  background-image: url(http://cdn.humblebundle.com/static/hashed/6adfa64fbf84dfe5512f7e56f02031c57d3ba87a.png)
 }
 #hs-row-2 {
   float: left;
@@ -190,7 +256,7 @@ div#hs-caption div {
 }
 #hs-linux {
   float:left;
-  background: url(http://cdn.humblebundle.com/store/linux.png) no-repeat;
+  background: url(http://cdn.humblebundle.com/static/hashed/a820638043661911e913de4b4db4327140e4b12e.png) no-repeat;
   width: 13px;
   height: 16px;
   position:relative;
@@ -199,7 +265,7 @@ div#hs-caption div {
 }
 #hs-mac {
   float:left;
-  background: url(http://cdn.humblebundle.com/store/mac.png) no-repeat;
+  background: url(http://cdn.humblebundle.com/static/hashed/1b413be9c7b2471e2294854892a4a71f84571209.png) no-repeat;
   width: 14px;
   height: 18px;
   padding-right:10px;
@@ -208,7 +274,7 @@ div#hs-caption div {
   float:left;
   position:relative;
   top:2px;
-  background: url(http://cdn.humblebundle.com/store/windows.png) no-repeat;
+  background: url(http://cdn.humblebundle.com/static/hashed/cce6f10228f25e2fd577149023496440fc1c89f1.png) no-repeat;
   width: 18px;
   height: 16px;
   padding-right:8px;
@@ -217,16 +283,16 @@ div#hs-caption div {
   float:left;
   position:relative;
   top:0px;
-  background: url(http://cdn.humblebundle.com/store/android.png) no-repeat;
+  background: url(http://cdn.humblebundle.com/static/hashed/e3a2098daed8c153ddb9f087810581d6f9157675.png) no-repeat;
   width: 13px;
   height: 18px;
   padding-right:8px;
 }
-#hs-soundtrack {
+#hs-audio {
   float:left;
   position:relative;
   top:1px;
-  background: url(http://cdn.humblebundle.com/store/soundtrack.png) no-repeat;
+  background: url(http://cdn.humblebundle.com/static/hashed/df53fac683d5a9e86a1ae0288644eaa9aabb3ccd.png) no-repeat;
   width: 14px;
   height: 18px;
   padding-right:8px;
@@ -267,21 +333,21 @@ div#hs-caption div {
   top:0;
   width:762px;
   height:20px;
-  background:url(http://cdn.humblebundle.com/hib3/innerpapers.png) 0 0 no-repeat;
+  background:url(http://cdn.humblebundle.com/static/hashed/d479e849acc57977fa62820e78c4be68a03d01a4.png) 0 0 no-repeat;
 }
 .whitemid {
   position:absolute;
   top:20px;
   width:762px;
   bottom:20px;
-  background:url(http://cdn.humblebundle.com/hib3/innerpapers-mid.png);
+  background:url(http://cdn.humblebundle.com/static/hashed/dc9f9df53fa1c8a2ac561d7c37a00f8c5c3b7a6f.png);
 }
 .whitebottom {
   position:absolute;
   bottom:0;
   width:762px;
   height:20px;
-  background:url(http://cdn.humblebundle.com/hib3/innerpapers.png) bottom no-repeat;
+  background:url(http://cdn.humblebundle.com/static/hashed/d479e849acc57977fa62820e78c4be68a03d01a4.png) bottom no-repeat;
 }
 .whitecontent {
   position:relative;
@@ -305,13 +371,14 @@ div#hs-caption div {
   left:-57px !important;
 }
 
+
 /* order.css */
 .scharity .icon {
   left:10px;
   top:7px;
   height:17px;
   width:16px;
-  background:url(http://cdn.humblebundle.com/buttons/charity.png) no-repeat;
+  background:url(http://cdn.humblebundle.com/static/hashed/3eb7672ac15030f74a06846d7683273bb578f512.png) no-repeat;
 }
 
 
@@ -323,7 +390,7 @@ div#hs-caption div {
   top:6px;
   height:17px;
   width:16px;
-  background:url(http://cdn.humblebundle.com/buttons/evenly.png) no-repeat;
+  background:url(http://cdn.humblebundle.com/static/hashed/dbc8024c0717897aa1862c324b86d795d28e3df5.png) no-repeat;
 }
 .sdefault .a,.sdefault.flexbtn {
   padding-left:30px;
@@ -333,7 +400,7 @@ div#hs-caption div {
   top:8px;
   height:17px;
   width:16px;
-  background:url(http://cdn.humblebundle.com/buttons/custom.png) no-repeat;
+  background:url(http://cdn.humblebundle.com/static/hashed/22f44a1b21b23c46e234ef07b11577e26fe118ff.png) no-repeat;
 }
 .scustom .a,.scustom.flexbtn {
   padding-left:30px;
@@ -343,7 +410,7 @@ div#hs-caption div {
   top:6px;
   height:17px;
   width:16px;
-  background:url(http://cdn.humblebundle.com/buttons/developers.png) no-repeat;
+  background:url(http://cdn.humblebundle.com/static/hashed/cf4e5334e8b28beeea1fe5dfe55553071cd7e9ac.png) no-repeat;
 }
 .sdevelopers .a,.sdevelopers.flexbtn {
   padding-left:30px;
@@ -378,12 +445,10 @@ div#hs-caption div {
   padding-top:14px;
 }
 #sadnessimg {
-  background:url(http://cdn.humblebundle.com/hib2/sad_developer.jpg) no-repeat;
-  height:585px;
-  width:698px;
   margin-top:12px;
   margin-left:12px;
 }
+
 #humblereminder {
   font-style: italic;
   width:570px;
@@ -471,7 +536,7 @@ a.suggested-email {
 
 .staple {
   position:absolute;
-  background:url(http://cdn.humblebundle.com/hib2/clip0.png) no-repeat;
+  background:url(http://cdn.humblebundle.com/static/hashed/f3b78262e2b2c3b071226285c4505d2e6dca9c77.png) no-repeat;
   width:61px;
   height:24px;
 }
@@ -481,21 +546,21 @@ a.suggested-email {
 }
 .staple.s2 {
   top:12px;
-  background-image:url(http://cdn.humblebundle.com/hib2/clip1.png);
+  background-image:url(http://cdn.humblebundle.com/static/hashed/43536b17c53f7c0884a9d9f691f5a6976388a8a3.png);
   width:62px;
   height:22px;
   right:13px;
 }
 .staple.s3 {
   top:11px;
-  background-image:url(http://cdn.humblebundle.com/hib2/clip2.png);
+  background-image:url(http://cdn.humblebundle.com/static/hashed/32435e432f8b0281eeb7818fc07659024eaf53e8.png);
   width:62px;
   height:22px;
   left:13px;
 }
 .staple.s4 {
   top:11px;
-  background-image:url(http://cdn.humblebundle.com/hib2/clip3.png);
+  background-image:url(http://cdn.humblebundle.com/static/hashed/95c32f51299dfb94de92b5a1114c1dd9bc0bcc09.png);
   width:64px;
   height:18px;
   right:12px;
@@ -555,15 +620,19 @@ a.suggested-email {
   top:-30 px;
   font-size: 25px;
 }
-.hs-purchase-in-progress img{
+.hs-purchase-in-progress .spinner {
   position: relative;
   top: 5px;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  background: url(http://cdn.humblebundle.com/static/hashed/3288d1035d70bb86517e2c233f1a904e41f06b29.gif) no-repeat;
 }
 .on-sale #hs-ribbon {
   position: absolute;
   top: 0;
   left: 0;
-  background: url(http://cdn.humblebundle.com/store/sale_ribbon.png) no-repeat;
+  background: url(http://cdn.humblebundle.com/static/hashed/b1ea1c89d226856d4097b41922fd5807bf0f792a.png) no-repeat;
   width: 60px;
   height: 60px;
 }
